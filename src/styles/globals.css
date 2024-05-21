@@ -13,6 +13,10 @@
   --secondary-background: hsl(57 51 93);
 
   /* Font */
-  --font-roboto: 'Roboto', sans-serif;
   --font-merriweather: 'Merriweather', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+body, main {
+  font-family: var(--font-merriweather);
 }

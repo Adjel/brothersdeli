@@ -1,6 +1,11 @@
-import { Inter } from "next/font/google";
+import { Merriweather } from "next/font/google";
+import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const merri = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  variable: "--font-merriweather",
+});
 
 export const metadata = {
   title: "Brotherdeli",
@@ -10,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body className={`${merri.variable}`}>{children}</body>
     </html>
   );
 }
