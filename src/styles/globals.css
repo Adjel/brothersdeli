@@ -1,0 +1,18 @@
+:root {
+  /*font-family: var(--fontRoboto), var(--fontMerriweather);*/
+
+      /* Breakpoints */
+  --tablet-min: 34.375rem; /* 550px */
+  --laptop-min: 93.75rem; /* 1500px */
+  --desktop-min: 93.75rem; /* 1500px */
+
+  /* Colors */
+  --red: hsl(0 59 40);
+  --primary: hsl(116 29 19);
+  --secondary: hsl(56 49 93);
+  --secondary-background: hsl(57 51 93);
+
+  /* Font */
+  --font-roboto: 'Roboto', sans-serif;
+  --font-merriweather: 'Merriweather', sans-serif;
+}
