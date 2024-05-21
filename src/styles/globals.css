@@ -31,6 +31,12 @@
   --font-roboto: 'Roboto', sans-serif;
   --font-thicker: 'Thicker, sans-serif';
   --font-thicker-upright: 'ThickerUprigth, sans-serif';
+
+    /* Font-sizes */
+    --button-font-size: calc(15/16*1rem);
+
+      /* Font weight*/
+      --font-weight-five: 500;
 }
 
 body, main {

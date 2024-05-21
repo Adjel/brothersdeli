@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import styles from "./orderingButton.module.css";
 
 function OrderingButton() {
-  return <div></div>;
+  return <a className={styles.orderingButton}>COMMANDER</a>;
 }
 
 export default OrderingButton;
