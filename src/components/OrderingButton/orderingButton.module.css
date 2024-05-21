@@ -8,5 +8,11 @@
     font-weight: var(--font-weight-five);
     padding: calc(12/16*1rem) calc(24/16*1rem);
     cursor: pointer;
+    display: none;
+}
 
+@media (min-width: calc((--tablet-min))) {
+    .orderingButton {
+        display: revert;
+    }
 }
