@@ -1,9 +1,48 @@
+.mobileNavWrapper {
+  min-height: calc(160/16*1em);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  line-height: calc(24/16*1rem);
+  margin: 0;
+}
+
+.desktopNavWrapper {
+  display: none;
+}
+
 .navLink {
-    color: var(--red);
-  }
-  
+  text-decoration: none;
+  color: var(--primary);
+  font-family: var(--font-merriweather);
+  text-transform: uppercase;
+  padding: calc(10/16*1rem) calc(20/16*1rem);
+  font-size: var(--nav-font-size);
+  font-weight: var(--font-weight-nine);
+}
+
 .navLink > * {
     color: inherit;
+  }
+
+    /* tablet and up */
+@media (min-width: 36rem) {
+   
+  }
+
+  /* pc and up */
+@media (min-width: 62rem) {
+    .mobileNavWrapper {
+      flex-direction: revert;
+    }
+    .desktopNavWrapper {
+      display: revert;
+    }
+    .navLink {
+      font-size: var(--desktop-button-font-size);
+      padding: calc(5/16*1rem) calc(12/16*1rem);
+    }
   }
 
 

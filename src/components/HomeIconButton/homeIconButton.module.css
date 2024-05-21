@@ -1,7 +1,20 @@
-.iconWrapper {
-    /*
-    width: calc(129px / 16 * 1rem);
-    */
-    width: 8.0625rem;
+.wrapper {
+    display: flex;
+    width: 100%;
     height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    object-fit: contain;
+    max-width: 100%;
+    height: "auto" 
+}
+
+/* tablet and up */
+@media (min-width: 36rem) {
+    .icon {
+        max-width: 45%;
+    }
 }
