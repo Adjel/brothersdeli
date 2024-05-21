@@ -1,0 +1,12 @@
+.orderingButton {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: calc(15/16*1rem);
+    box-sizing: border-box;
+    font-family: var(--font-roboto);
+    font-size: var(--button-font-size);
+    font-weight: var(--font-weight-five);
+    padding: calc(12/16*1rem) calc(24/16*1rem);
+    cursor: pointer;
+
+}
