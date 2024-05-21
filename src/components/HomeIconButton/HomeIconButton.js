@@ -1,8 +1,22 @@
 import React from "react";
 import Link from "next/link";
+import homeIcon from "../../../public/images/logos/logo-vert-brothers-deli.png";
+import Image from "next/image";
+import styles from "./homeIconButton.module.css";
 
 function HomeIconButton() {
-  return <Link href="/">Icon</Link>;
+  return (
+    <Link href="/">
+      <div className={styles.iconWrapper}>
+        <Image
+          src={homeIcon}
+          alt="L'icône brotherdeli. Cliquez dessus pour retourner à l'acceuil"
+          layout="responsive"
+          style={{ objectFit: "contain", maxWidth: "100", height: "auto" }}
+        />
+      </div>
+    </Link>
+  );
 }
 
 export default HomeIconButton;

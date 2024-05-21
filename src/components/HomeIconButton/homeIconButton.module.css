@@ -1,0 +1,7 @@
+.iconWrapper {
+    /*
+    width: calc(129px / 16 * 1rem);
+    */
+    width: 8.0625rem;
+    height: auto;
+}
