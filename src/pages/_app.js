@@ -13,11 +13,9 @@ const merri = Merriweather({
 function MyApp({ Component, pageProps }) {
   return (
     <main className={`${merri.variable}`}>
-      <Page>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </Page>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </main>
   );
 }
