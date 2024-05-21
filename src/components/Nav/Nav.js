@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./nav.module.css";
+import styles from "./Nav.module.css";
 
 function Nav() {
   return (
     <nav>
-      <div className={styles.navLink}>TEST</div>
       <Link className={styles.navLink} href="notre-histoire">
         Notre histoire
       </Link>

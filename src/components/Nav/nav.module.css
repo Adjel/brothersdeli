@@ -1,9 +1,10 @@
-
-
 .navLink {
     color: var(--red);
-}
-
+  }
+  
 .navLink > * {
     color: inherit;
-}
+  }
+
+
+
