@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Thicker';
+  src: url('/public/fonts/Thicker-Regular-trial.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ThickerUprigth';
+  src: url('/public/fonts/Thicker-Regular-Upright-trial.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   /*font-family: var(--fontRoboto), var(--fontMerriweather);*/
 
@@ -15,6 +29,8 @@
   /* Font */
   --font-merriweather: 'Merriweather', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
+  --font-thicker: 'Thicker, sans-serif';
+  --font-thicker-upright: 'ThickerUprigth, sans-serif';
 }
 
 body, main {
