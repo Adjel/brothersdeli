@@ -15,14 +15,15 @@
 :root {
   /*font-family: var(--fontRoboto), var(--fontMerriweather);*/
 
-      /* Breakpoints */
-  --tablet-min: 34.375rem; /* 550px */
-  --laptop-min: 93.75rem; /* 1500px */
-  --desktop-min: 93.75rem; /* 1500px */
+      /* Breakpoints cannot be used in media queries,
+       but it can be usefull to be sure to use same values in the whole project */
+  --tablet-and-up: 36rem; /* 567px */
+  --laptop-and-up: 62rem; /* 992px */
 
   /* Colors */
   --red: hsl(0 59 40);
   --primary: hsl(116 29 19);
+  --primary-action: hsl(125 39 33);
   --secondary: hsl(56 49 93);
   --secondary-background: hsl(57 51 93);
 
@@ -33,10 +34,18 @@
   --font-thicker-upright: 'ThickerUprigth, sans-serif';
 
     /* Font-sizes */
-    --button-font-size: calc(15/16*1rem);
+  --button-font-size: calc(15/16*1rem);
+  --desktop-button-font-size: calc(17/16*1rem);
 
       /* Font weight*/
-      --font-weight-five: 500;
+  --font-weight-five: 500;
+  --font-weight-nine: 900;
+
+  --nav-font-size: calc(13/16*1rem);
+}
+
+body {
+  margin: 0;
 }
 
 body, main {

@@ -1,10 +1,93 @@
+.wrapper {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: max-height .3s ease, transform .3s ease;
+  width: 100%;
+}
+
+.wrapper.open {
+  display: block;
+  transform: scaleY(1);
+}
+
+.wrapper.closed {
+  display: block; /* Ensure the transition can occur */
+  max-height: 0;
+  transform: scaleY(0);
+}
+
+.mobileNavWrapper {
+  width: 100%;
+  min-height: calc(160/16*1em);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  line-height: calc(24/16*1rem);
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary);
+}
+
+.desktopNavWrapper {
+  display: none;
+  width: 100%;
+}
+
 .navLink {
-    color: var(--red);
+  display: flex;
+  text-decoration: none;
+  color: var(--primary);
+  font-family: var(--font-merriweather);
+  text-transform: uppercase;
+  padding: calc(10/16*1rem) calc(20/16*1rem);
+  font-size: var(--nav-font-size);
+  font-weight: var(--font-weight-nine);
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
   }
-  
+}
+
+.liLinkWrapper {
+  width: 100%;
+}
+
 .navLink > * {
     color: inherit;
+}
+
+    /* tablet and up */
+@media (min-width: 36rem) {
+   
   }
+
+  /* pc and up */
+@media (min-width: 62rem) {
+    .mobileNavWrapper {
+      flex-direction: revert;
+    }
+    .desktopNavWrapper {
+      display: flex;
+    }
+    .navLink {
+      font-size: var(--desktop-button-font-size);
+      padding: calc(5/16*1rem) calc(12/16*1rem);
+
+      &:hover {
+        background-color: revert;
+        color: var(--primary-action);
+      }
+    }
+  }
+
+
 
 
 

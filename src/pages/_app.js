@@ -1,5 +1,4 @@
 import { Merriweather } from "next/font/google";
-import Page from "@/app/page";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../styles/globals.css";

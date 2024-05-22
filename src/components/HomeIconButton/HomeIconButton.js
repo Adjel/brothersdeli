@@ -6,15 +6,13 @@ import styles from "./homeIconButton.module.css";
 
 function HomeIconButton() {
   return (
-    <Link href="/">
-      <div className={styles.iconWrapper}>
-        <Image
-          src={homeIcon}
-          alt="L'icône brotherdeli. Cliquez dessus pour retourner à l'acceuil"
-          layout="responsive"
-          style={{ objectFit: "contain", maxWidth: "100", height: "auto" }}
-        />
-      </div>
+    <Link className={styles.wrapper} href="/">
+      <Image
+        className={styles.icon}
+        src={homeIcon}
+        alt="L'icône brotherdeli. Cliquez dessus pour retourner à l'acceuil"
+        layout="responsive"
+      />
     </Link>
   );
 }
