@@ -4,9 +4,9 @@ import styles from "./nav.module.css";
 
 export default function MobileNav() {
   return (
-    <nav>
+    <nav className={styles.wrapper}>
       <ul className={styles.mobileNavWrapper}>
-        <il>
+        <il style={{ width: "100%" }}>
           <Link className={styles.navLink} href="notre-histoire">
             Notre histoire
           </Link>

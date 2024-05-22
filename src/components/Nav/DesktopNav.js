@@ -5,8 +5,8 @@ import styles from "./nav.module.css";
 export default function DesktopNav() {
   return (
     // desktopNavWrapper is used to only display this component on pc
-    <nav className={styles.desktopNavWrapper}>
-      <ul className={styles.navWrapper}>
+    <nav>
+      <ul className={styles.desktopNavWrapper}>
         <il>
           <Link className={styles.navLink} href="notre-histoire">
             Notre histoire

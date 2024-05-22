@@ -23,6 +23,7 @@
   /* Colors */
   --red: hsl(0 59 40);
   --primary: hsl(116 29 19);
+  --primary-action: hsl(125 39 33);
   --secondary: hsl(56 49 93);
   --secondary-background: hsl(57 51 93);
 
@@ -43,7 +44,10 @@
   --nav-font-size: calc(13/16*1rem);
 }
 
+body {
+  margin: 0;
+}
+
 body, main {
   font-family: var(--font-merriweather);
-  margin: 0;
 }
