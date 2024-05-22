@@ -28,17 +28,23 @@
   --secondary-background: hsl(57 51 93);
 
   /* Font */
+  --font-merriweather-sans: 'Merriweather Sans', sans-serif;
   --font-merriweather: 'Merriweather', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
   --font-thicker: 'Thicker, sans-serif';
   --font-thicker-upright: 'ThickerUprigth, sans-serif';
 
     /* Font-sizes */
+  --font-size-label: calc(20/16*1rem);
+  --font-size-normal: calc(16/16*1rem);
   --button-font-size: calc(15/16*1rem);
   --desktop-button-font-size: calc(17/16*1rem);
 
       /* Font weight*/
+  --font-weight-one: 100;
+  --font-weight-normal: 400;
   --font-weight-five: 500;
+  --font-weight-bold: 700;
   --font-weight-nine: 900;
 
   --nav-font-size: calc(13/16*1rem);

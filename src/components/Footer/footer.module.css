@@ -1,0 +1,192 @@
+.footer {
+    display: grid;
+    width: 100%;
+    background-color: var(--primary);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "socials"
+    "about"
+    "legals";
+}
+
+.socials {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-area: socials;
+    padding: calc(10/16*1rem);
+}
+
+.about {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-area: about;
+    padding: calc(10/16*1rem);
+}
+
+
+
+.legals {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-area: legals;
+    padding: calc(10/16*1rem);
+}
+
+/* use new grid area layout declared in media query */
+.tabletIcon {
+    display: none;
+    width: 60%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    grid-area: icon;
+    margin-top: calc(20/16*1rem);
+    padding: calc(10/16*1rem);
+}
+/* use new grid area layout declared in media query */
+.tabletAbout {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: about;
+    padding: calc(10/16*1rem);
+}
+/* use new grid area layout declared in media query */
+.tabletContact {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: contact;
+    padding: calc(10/16*1rem);
+}
+/* use new grid area layout declared in media query */
+.tabletSocials {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: socials;
+    padding: calc(10/16*1rem);
+}
+
+.footer * {
+    color: var(--secondary)
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(10/16*1rem);
+}
+
+
+.tabletSocialsWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: space-evenly;
+    gap: 19px;
+    padding: calc(10/16*1rem);
+}
+.link {
+    text-decoration: none;
+}
+.icon {
+    max-width: 100%;
+}
+.ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.il {
+    padding: calc(5/16*1rem);
+}
+.h2 {
+    font-family: var(--font-merriweather-sans);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-one);
+    margin-bottom: calc(20/16*1rem);
+}
+.ul .link {
+    font-family: var(--font-merriweather);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-bold);
+}
+.circle {
+    display: none;
+}
+
+@media (min-width: 36rem) {
+    .footer {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "icon about contact socials"
+        "space space space space"
+        "tlegals tlegals tlegals tlegals";
+    }
+    .socials {
+        display: none;
+    }
+    .tabletIcon {
+        display: flex;
+        align-items: start;
+    }
+    .tabletAbout{
+        display: flex;
+    }
+    .tabletSocials {
+        display: flex;
+    }
+    .tabletContact {
+        display: flex;
+    }
+ 
+    /* about is not used to style on tablet and up, because the parent 
+    style about and leglas inside one place*/
+    .about {
+        grid-area: none;
+        width: revert;
+        display: revert;
+        justify-content: end;
+    }
+       /* about is not used to style on tablet and up, because the parent 
+    style about and leglas inside one place*/
+    .legals {
+        grid-area: none;
+        width: revert;
+        justify-content: revert;
+    }
+    .aboutAndLegals {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: tlegals;
+    }
+    .dot {
+        display: none;
+    }
+    .circle {
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 4px;
+        background-color: var(--secondary); /* Couleur du cercle */
+        border-radius: 50%;
+    }
+}
