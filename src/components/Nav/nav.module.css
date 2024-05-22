@@ -49,10 +49,14 @@
   white-space: nowrap;
   overflow: hidden;
 
-  &:hoover {
+  &:hover {
     background-color: var(--primary);
     color: var(--secondary);
   }
+}
+
+.liLinkWrapper {
+  width: 100%;
 }
 
 .navLink > * {

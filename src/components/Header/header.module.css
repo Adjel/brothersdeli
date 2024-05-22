@@ -69,7 +69,6 @@
     }
     .mobileNavWrapper {
       padding-bottom: revert;
-      gap: revert;
     }
 }
 
@@ -83,6 +82,7 @@
     }
     .mobileNavWrapper{
       display: none;
+      gap: revert;
     }
 
     /*  this is to take all space between homIcon and orderButton nav on desktop */

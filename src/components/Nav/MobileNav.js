@@ -19,22 +19,22 @@ export default function MobileNav({ isNavOpen }) {
       className={`${styles.wrapper} ${isNavOpen ? styles.open : styles.closed}`}
     >
       <ul className={styles.mobileNavWrapper}>
-        <il style={{ width: "100%" }}>
+        <il className={styles.liLinkWrapper}>
           <Link className={styles.navLink} href="notre-histoire">
             Notre histoire
           </Link>
         </il>
-        <il>
+        <il className={styles.liLinkWrapper}>
           <Link className={styles.navLink} href="la-carte">
             La carte
           </Link>
         </il>
-        <il>
+        <il className={styles.liLinkWrapper}>
           <Link className={styles.navLink} href="devenir-franchise">
             devenir franchisé
           </Link>
         </il>
-        <il>
+        <il className={styles.liLinkWrapper}>
           <Link className={styles.navLink} href="contact">
             Contact
           </Link>
