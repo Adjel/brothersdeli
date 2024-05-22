@@ -28,9 +28,9 @@ function Header() {
             <IoMenu className={styles.icon} />
           )}
         </button>
-        {isNavOpen && <MobileNav />}
-        {/* the deskopt nav is already display on pc */}
+        <MobileNav isNavOpen={isNavOpen} />
       </div>
+      {/* the deskopt nav is already display on pc */}
       <div className={styles.desktopNav}>
         <DesktopNav />
       </div>

@@ -2,9 +2,11 @@ import React from "react";
 import Link from "next/link";
 import styles from "./nav.module.css";
 
-export default function MobileNav() {
+export default function MobileNav({ isNavOpen }) {
   return (
-    <nav className={styles.wrapper}>
+    <nav
+      className={`${styles.wrapper} ${isNavOpen ? styles.open : styles.closed}`}
+    >
       <ul className={styles.mobileNavWrapper}>
         <il style={{ width: "100%" }}>
           <Link className={styles.navLink} href="notre-histoire">
