@@ -45,4 +45,5 @@
 
 body, main {
   font-family: var(--font-merriweather);
+  margin: 0;
 }

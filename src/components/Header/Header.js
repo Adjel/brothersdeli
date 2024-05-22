@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.iconWrapper}>
+      <div className={styles.homeIconWrapper}>
         <HomeIconButton />
       </div>
       {/*  mobileNavWrapper is not showed on pc version */}

@@ -1,6 +1,6 @@
 .wrapper {
     display: flex;
-    width: 100%;
+    
     height: auto;
     justify-content: center;
     align-items: center;
@@ -15,6 +15,15 @@
 /* tablet and up */
 @media (min-width: 36rem) {
     .icon {
-        max-width: 45%;
+        max-width: 50%;
+       width: 45%;
+    }
+}
+
+/* pc */
+@media (min-width: 62rem) {
+    .icon {
+        max-width: 37%;
+        width: 37%;
     }
 }
