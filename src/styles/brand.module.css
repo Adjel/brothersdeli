@@ -1,0 +1,31 @@
+.header, .article {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+}
+.newYork {
+    border: 2px solid green;
+}
+
+.article {
+    border: 2px solid orange;
+}
+
+.articleContent {
+    border: 2px solid pink;
+}
+
+.image {
+    border: 2px solid cyan;
+}
+
+@media (min-width: 36rem) {
+    .header, .article {
+        flex-direction: revert;
+    } 
+}
