@@ -10,7 +10,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <small className={styles.socials}>
+      <section className={styles.socials}>
         <ul className={styles.mobileUl}>
           <il>
             <Link className={styles.link} href={""}>
@@ -23,16 +23,16 @@ function Footer() {
             </Link>
           </il>
         </ul>
-      </small>
-      <div className={styles.tabletIcon}>
+      </section>
+      <section className={styles.tabletIcon}>
         <Image
           className={styles.icon}
           src={brandIcon}
           alt="L'icône brotherdeli. Cliquez dessus pour retourner à l'acceuil"
           layout="responsive"
         />
-      </div>
-      <div className={styles.tabletAbout}>
+      </section>
+      <section className={styles.tabletAbout}>
         <ul className={styles.ul}>
           <h2 className={styles.h2}>A propos</h2>
           <il className={styles.il}>
@@ -51,8 +51,8 @@ function Footer() {
             </Link>
           </il>
         </ul>
-      </div>
-      <div className={styles.tabletContact}>
+      </section>
+      <section className={styles.tabletContact}>
         <ul className={styles.ul}>
           <h2 className={styles.h2}>Contact</h2>
           <il className={styles.il}>
@@ -66,8 +66,8 @@ function Footer() {
             </Link>
           </il>
         </ul>
-      </div>
-      <div className={styles.tabletSocials}>
+      </section>
+      <section className={styles.tabletSocials}>
         <ul className={styles.ul}>
           <h2 className={styles.h2}>Rejoignez-nous sur les réseaux</h2>
           <div className={styles.tabletSocialsWrapper}>
@@ -83,7 +83,7 @@ function Footer() {
             </il>
           </div>
         </ul>
-      </div>
+      </section>
       <section className={styles.aboutAndLegals}>
         <span className={styles.about}>
           © BROTHERS DELI 2023 - Tous droits réservés
