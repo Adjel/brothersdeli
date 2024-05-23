@@ -1,4 +1,9 @@
 .footer {
+    --padding: calc(10/16*1rem);
+    --gap: calc(26/16*1rem);
+}
+
+.footer {
     display: grid;
     max-width: 100%;
     background-color: var(--primary);
@@ -12,13 +17,32 @@
     overflow-x: auto;
 }
 
-.socials {
+.footer * {
+    color: var(--secondary)
+}
+
+.socials, .about, .legals, .tabletSocialsWrapper {
     display: flex;
-    max-width: 100%;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    padding: var(--padding);
+}
+
+.socials {
     grid-area: socials;
-    padding: calc(10/16*1rem);
+}
+
+.about {
+    grid-area: about;
+    font-size: var(--small-button-font-size);
+    font-weight: var(--font-size-normal);
+}
+
+.legals {
+    grid-area: legals;
+    font-size: var(--small-button-font-size);
+    font-weight: var(--font-size-normal);
 }
 .mobileUl {
     width: 100%;
@@ -26,90 +50,30 @@
     display: flex;
     justify-content: center;
     align-items: end;
-    gap: calc(26/16*1rem);
-}
-
-.about {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    grid-area: about;
-    padding: calc(10/16*1rem);
-    font-size: var(--small-button-font-size);
-    font-weight: var(--font-size-normal);
-}
-
-.legals {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    grid-area: legals;
-    padding: calc(10/16*1rem);
-    font-size: var(--small-button-font-size);
-    font-weight: var(--font-size-normal);
+    gap: var(--gap);
 }
 
 /* use new grid area layout declared in media query */
-.tabletIcon {
+.tabletIcon, .tabletAbout, .tabletContact, .tabletSocials {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+}
+
+.tabletIcon {
     width: 60%;
     height: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
     grid-area: icon;
     margin-top: calc(20/16*1rem);
-    padding: calc(10/16*1rem);
+    align-items: flex-start;
 }
-/* use new grid area layout declared in media query */
-.tabletAbout {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: about;
-    padding: calc(10/16*1rem);
-}
-/* use new grid area layout declared in media query */
-.tabletContact {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: contact;
-    padding: calc(10/16*1rem);
-}
-/* use new grid area layout declared in media query */
-.tabletSocials {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: socials;
-    padding: calc(10/16*1rem);
-}
-
-.footer * {
-    color: var(--secondary)
-}
-
-.socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: calc(10/16*1rem);
-}
-
 
 .tabletSocialsWrapper {
-    display: flex;
     width: 100%;
-    justify-content: center;
     align-items: space-evenly;
     gap: 19px;
-    padding: calc(10/16*1rem);
 }
 .link {
     text-decoration: none;
@@ -151,39 +115,21 @@
         "icon about contact socials"
         "space space space space"
         "tlegals tlegals tlegals tlegals";
-        overflow: auto;
     }
     .socials {
         display: none;
     }
-    .tabletIcon {
-        display: flex;      
-    }
-    .tabletAbout{
-        display: flex;
-    }
-    .tabletSocials {
-        display: flex;
-    }
-    .tabletContact {
+    .tabletIcon, .tabletAbout, .tabletContact, .tabletSocials {
         display: flex;
     }
  
-    /* about is not used to style on tablet and up, because the parent 
+    /* not used to style on tablet and up, because the parent 
     style about and leglas inside one place*/
-    .about {
+    .about, .legals {
         grid-area: none;
         width: revert;
         display: revert;
         justify-content: end;
-        font-size: var(--font-size-14);
-    }
-       /* about is not used to style on tablet and up, because the parent 
-    style about and leglas inside one place*/
-    .legals {
-        grid-area: none;
-        width: revert;
-        justify-content: revert;
         font-size: var(--font-size-14);
     }
     .aboutAndLegals {
