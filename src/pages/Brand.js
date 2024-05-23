@@ -1,12 +1,28 @@
 import React from "react";
 import styles from "../styles/brand.module.css";
 import Image from "next/image";
+import Pierre from "../../public/images/pierre/Pierre-Brothers-Deli-scaled.jpg";
+import Simon from "../../public/images/simon/Simon-Brothers-Deli-scaled.jpg";
+import LHImage from "../../public/images/Photo-accueil-Sandwich-Green-Brothers-768x768.png";
+import RHImage from "../../public/images/Une-main-qui-tient-un-sandwich.png";
+import NewYork from "../../public/images/les-rues-de-new-york/Les-rues-de-New-York.jpg";
+import ViandePastrami from "../../public/images/viande-pastrami/Viande-de-pastrami-fait-maison-scaled.jpg";
 
 export default function Brand() {
   return (
     <section className={styles.section}>
       <header className={styles.header}>
-        <h1>voici notre histoire</h1>
+        <Image
+          className={styles.headerImage}
+          src={LHImage}
+          layout="responsive"
+        />
+        <h1 className={styles.h1}>voici notre histoire !</h1>
+        <Image
+          className={styles.headerImage}
+          src={RHImage}
+          layout="responsive"
+        />
       </header>
       <section className={styles.marquee}>
         <h2 className={styles.marqueeContent}>
@@ -28,9 +44,13 @@ export default function Brand() {
             regrouper en un seul endroit.
           </b>
         </section>
-        <Image className={styles.image} />
+        <div className={styles.creatorsPhotos}>
+          <Image className={styles.image} src={Simon} layout="responsive" />
+          <Image className={styles.image} src={Pierre} layout="responsive" />
+        </div>
       </article>
       <article className={styles.article}>
+        <Image className={styles.image} src={NewYork} layout="responsive" />
         <section className={styles.articleContent}>
           <h2>le pastrami, c'est quoi ?</h2>
           <p>
@@ -48,7 +68,6 @@ export default function Brand() {
             tout l’Hexagone.
           </b>
         </section>
-        <Image className={styles.image} />
       </article>
       <article className={styles.article}>
         <section className={styles.articleContent}>
@@ -70,7 +89,11 @@ export default function Brand() {
             l’authenticité, la fraîcheur et la qualité inégalée.
           </p>
         </section>
-        <Image className={styles.image} />
+        <Image
+          className={styles.image}
+          src={ViandePastrami}
+          layout="responsive"
+        />
       </article>
     </section>
   );

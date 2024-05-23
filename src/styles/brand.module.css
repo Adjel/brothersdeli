@@ -1,11 +1,42 @@
-.header, .article {
+.section, .header, .article, .articleContent, .creatorsPhotos {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 2px solid red;
+    max-width: 100%;
 }
+
+.header {
+    background-color: var(--secondary);
+    align-items: flex-start;
+    min-height: fit-content;
+}
+
+.h1 {
+    min-width: 33.333%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--font-thicker);
+    font-size: clamp(3.25rem, 7vw, 6.25rem);
+    font-weight: var(--font-weight-normal);
+    color: var(--primary);
+    margin: 0;
+}
+
+.headerSection {
+    align-self: flex-start;
+    min-width: 33.333%;
+    border: 2px solid cyan;
+}
+.headerImage {
+    object-fit: contain;
+    height: auto;
+}
+
 .section {
-    display: flex;
-    flex-direction: column;
+    max-width: 100%;
+    overflow-x: hidden;
     border: 2px solid blue;
 }
 /* container to make animation on content 
@@ -18,23 +49,33 @@ see marqueeContent at the bottom of this file*/
     order: 2px solid green;
 }
 
+.creatorsPhotos {
+    border: 2px solid cyan;
+}
 
 .article {
     border: 2px solid orange;
 }
 
 .articleContent {
+    display: flex;
     border: 2px solid pink;
 }
-
 .image {
-    border: 2px solid cyan;
+    object-fit: contain;
+    height: auto;
 }
 
 @media (min-width: 36rem) {
-    .header, .article {
+    .header, .article, .creatorsPhotos {
         flex-direction: revert;
     } 
+    .mobileContainer {
+        display: none;
+    }
+    .headerImage {
+        max-width: 33.333%;
+    }
 }
 
 .marqueeContent {
