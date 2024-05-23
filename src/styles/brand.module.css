@@ -8,9 +8,16 @@
     flex-direction: column;
     border: 2px solid blue;
 }
-.newYork {
-    border: 2px solid green;
+/* container to make animation on content 
+see marqueeContent at the bottom of this file*/
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    order: 2px solid green;
 }
+
 
 .article {
     border: 2px solid orange;
@@ -28,4 +35,19 @@
     .header, .article {
         flex-direction: revert;
     } 
+}
+
+.marqueeContent {
+    display: inline-block;
+    padding-left: 150%;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
