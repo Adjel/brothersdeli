@@ -1,6 +1,7 @@
 .orderingButton {
+    max-width: fit-content;
     height: auto;
-    max-height: calc(39/16*1rem);
+    max-height: calc(48/16*1rem);
     background-color: var(--primary);
     color: var(--secondary);
     border-radius: calc(15/16*1rem);
@@ -11,11 +12,4 @@
     padding: calc(12/16*1rem) calc(24/16*1rem);
     line-height: 1;
     cursor: pointer;
-    display: none;
 }
-
-@media (min-width: 36rem) {
-    .orderingButton {
-        display: revert;
-    }
-  }
