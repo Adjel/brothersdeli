@@ -1,0 +1,154 @@
+.footer {
+    --padding: calc(10/16*1rem);
+    --gap: calc(26/16*1rem);
+}
+
+.footer {
+    display: grid;
+    max-width: 100%;
+    background-color: var(--primary);
+    grid-template-columns: 1fr;
+    justify-content: center;
+    /* the grid area template change in tablet media query*/
+    grid-template-areas: 
+    "socials"
+    "about"
+    "legals";
+    overflow-x: auto;
+}
+
+.footer * {
+    color: var(--secondary)
+}
+
+.socials, .about, .legals, .tabletSocialsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: var(--padding);
+}
+
+.socials {
+    grid-area: socials;
+}
+
+.about {
+    grid-area: about;
+    font-size: var(--small-button-font-size);
+    font-weight: var(--font-size-normal);
+}
+
+.legals {
+    grid-area: legals;
+    font-size: var(--small-button-font-size);
+    font-weight: var(--font-size-normal);
+}
+.mobileUl {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: var(--gap);
+}
+
+/* use new grid area layout declared in media query */
+.tabletIcon, .tabletAbout, .tabletContact, .tabletSocials {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+}
+
+.tabletIcon {
+    width: 60%;
+    height: auto;
+    grid-area: icon;
+    margin-top: calc(20/16*1rem);
+    align-items: flex-start;
+}
+
+.tabletSocialsWrapper {
+    width: 100%;
+    align-items: space-evenly;
+    gap: 19px;
+}
+.link {
+    text-decoration: none;
+}
+.icon {
+    max-width: 100%;
+}
+.ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
+.il {
+    padding: calc(5/16*1rem);
+}
+.h2 {
+    font-family: var(--font-merriweather-sans);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-one);
+    margin-bottom: calc(20/16*1rem);
+}
+.ul .link {
+    font-family: var(--font-merriweather);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-bold);
+}
+.circle {
+    display: none;
+}
+
+@media (min-width: 36rem) {
+    .footer {
+        min-height: calc(340/16*1rem);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "icon about contact socials"
+        "space space space space"
+        "tlegals tlegals tlegals tlegals";
+    }
+    .socials {
+        display: none;
+    }
+    .tabletIcon, .tabletAbout, .tabletContact, .tabletSocials {
+        display: flex;
+    }
+ 
+    /* not used to style on tablet and up, because the parent 
+    style about and leglas inside one place*/
+    .about, .legals {
+        grid-area: none;
+        width: revert;
+        display: revert;
+        justify-content: end;
+        font-size: var(--font-size-14);
+    }
+    .aboutAndLegals {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: tlegals;
+    }
+    .dot {
+        display: none;
+    }
+    .circle {
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 4px;
+        background-color: var(--secondary); /* Couleur du cercle */
+        border-radius: 50%;
+    }
+}
