@@ -36,16 +36,22 @@ export default function Brand() {
         <article className={styles.articleCreators}>
           <section className={styles.articleContent}>
             <h2 className={styles.h2}>le concept</h2>
-            <p className={styles.p}>
-              Brothers Deli c’est deux amis, Simon et Pierre, qui se sont réunis
-              autour d’un projet commun : celui de proposer une street-food qui
-              fusionne les saveurs de la Méditerranée et celles des Deli’ des
-              années 50 à New York avec leur produit phare,<b> le pastrami</b>.
-            </p>
-            <b className={styles.b}>
-              C’est en quelques sortes la cuisine du monde qu’ils ont voulu
-              regrouper en un seul endroit.
-            </b>
+            <div className={styles.content}>
+              <p className={styles.p}>
+                Brothers Deli c’est deux amis, Simon et Pierre, qui se sont
+                réunis autour d’un projet commun : celui de proposer une
+                street-food qui fusionne les saveurs de la Méditerranée et
+                celles des Deli’ des années 50 à New York avec leur produit
+                phare,<b> le pastrami</b>.
+              </p>
+              <p className={styles.p}>
+                <b className={styles.b}>
+                  C’est en quelques sortes la cuisine du monde qu’ils ont voulu
+                  regrouper en un seul endroit.
+                </b>
+              </p>
+              <p>&nbsp;</p>
+            </div>
           </section>
           <section className={styles.creatorsPhotosSection}>
             <div className={styles.simonWrapper}>
