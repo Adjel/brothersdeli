@@ -11,7 +11,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <small className={styles.socials}>
-        <ul>
+        <ul className={styles.mobileUl}>
           <il>
             <Link className={styles.link} href={""}>
               <FaFacebookF />
@@ -84,14 +84,14 @@ function Footer() {
           </div>
         </ul>
       </div>
-      <div className={styles.aboutAndLegals}>
-        <small className={styles.about}>
+      <section className={styles.aboutAndLegals}>
+        <span className={styles.about}>
           © BROTHERS DELI 2023 - Tous droits réservés
-          <small className={styles.dot}>.</small>
-        </small>
+          <span className={styles.dot}>.</span>
+        </span>
         <span className={styles.circle} />
-        <small className={styles.legals}>Mentions légales</small>
-      </div>
+        <span className={styles.legals}>Mentions légales</span>
+      </section>
     </footer>
   );
 }

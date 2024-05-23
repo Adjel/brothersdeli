@@ -35,10 +35,12 @@
   --font-thicker-upright: 'ThickerUprigth, sans-serif';
 
     /* Font-sizes */
-  --font-size-label: calc(20/16*1rem);
-  --font-size-normal: calc(16/16*1rem);
-  --button-font-size: calc(15/16*1rem);
-  --desktop-button-font-size: calc(17/16*1rem);
+  --font-size-label: calc(20/16*1em);
+  --font-size-normal: calc(16/16*1em);
+  --font-size-14: calc(14/16*1em);
+  --button-font-size: calc(15/16*1em);
+  --desktop-button-font-size: calc(17/16*1em);
+  --small-button-font-size: calc(10/16*1em);
 
       /* Font weight*/
   --font-weight-one: 100;
@@ -47,7 +49,7 @@
   --font-weight-bold: 700;
   --font-weight-nine: 900;
 
-  --nav-font-size: calc(13/16*1rem);
+  --nav-font-size: calc(13/16*1em);
 }
 
 body {

@@ -5,10 +5,10 @@ import "../styles/globals.css";
 
 export default function Page() {
   return (
-    <>
+    <body>
       <Header />
       <Home />
       <Footer />
-    </>
+    </body>
   );
 }
