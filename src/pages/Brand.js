@@ -24,11 +24,13 @@ export default function Brand() {
           layout="responsive"
         />
       </header>
-      <section className={styles.marquee}>
-        <h2 className={styles.marqueeContent}>
-          BROTHERS DELI, LE OG DU PASTRAMI MADE IN FRANCE · RETROUVE TOI A NEW
-          YORK DES 50'S LE TEMPS D'UN SANDWICH.
-        </h2>
+      <section className={styles.marqueeSection}>
+        <span className={styles.marquee}>
+          <h2 className={styles.marqueeContent}>
+            BROTHERS DELI, LE OG DU PASTRAMI MADE IN FRANCE · RETROUVE TOI A NEW
+            YORK DES 50'S LE TEMPS D'UN SANDWICH.
+          </h2>
+        </span>
       </section>
       <article className={styles.article}>
         <section className={styles.articleContent}>
