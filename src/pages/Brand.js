@@ -32,25 +32,39 @@ export default function Brand() {
           </h2>
         </span>
       </section>
-      <article className={styles.article}>
-        <section className={styles.articleContent}>
-          <h2>le concept</h2>
-          <span>
-            Brothers Deli c’est deux amis, Simon et Pierre, qui se sont réunis
-            autour d’un projet commun : celui de proposer une street-food qui
-            fusionne les saveurs de la Méditerranée et celles des Deli’ des
-            années 50 à New York avec leur produit phare,<b>le pastrami</b>.
-          </span>
-          <b>
-            C’est en quelques sortes la cuisine du monde qu’ils ont voulu
-            regrouper en un seul endroit.
-          </b>
-        </section>
-        <div className={styles.creatorsPhotos}>
-          <Image className={styles.image} src={Simon} layout="responsive" />
-          <Image className={styles.image} src={Pierre} layout="responsive" />
-        </div>
-      </article>
+      <div className={styles.div}>
+        <article className={styles.articleCreators}>
+          <section className={styles.articleContent}>
+            <h2 className={styles.h2}>le concept</h2>
+            <p className={styles.p}>
+              Brothers Deli c’est deux amis, Simon et Pierre, qui se sont réunis
+              autour d’un projet commun : celui de proposer une street-food qui
+              fusionne les saveurs de la Méditerranée et celles des Deli’ des
+              années 50 à New York avec leur produit phare,<b> le pastrami</b>.
+            </p>
+            <b className={styles.b}>
+              C’est en quelques sortes la cuisine du monde qu’ils ont voulu
+              regrouper en un seul endroit.
+            </b>
+          </section>
+          <section className={styles.creatorsPhotosSection}>
+            <div className={styles.simonWrapper}>
+              <Image
+                className={styles.creatorPhotos}
+                src={Simon}
+                layout="responsive"
+              />
+            </div>
+            <div className={styles.pierreWrapper}>
+              <Image
+                className={styles.creatorPhotos}
+                src={Pierre}
+                layout="responsive"
+              />
+            </div>
+          </section>
+        </article>
+      </div>
       <article className={styles.article}>
         <Image className={styles.image} src={NewYork} layout="responsive" />
         <section className={styles.articleContent}>
