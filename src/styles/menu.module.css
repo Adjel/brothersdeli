@@ -1,0 +1,46 @@
+.section, .header, .dishCatWrapper, .dishCatHeader, .actionWrapper, .scrollButtonsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.section {
+    border: 2px solid blue;
+}
+
+.header {
+    border: 2px solid cyan;
+}
+
+.dishCatWrapper {
+    border: 2px solid pink;
+}
+
+.dishCatHeader {
+    border: 2px solid red;
+}
+
+.scrollButtonsWrapper {
+    border: 2px solid orange;
+}
+
+.gridCatWrapper {
+    display: grid;
+    grid-template-columns: 1;
+    border: 2px solid green;
+}
+
+.actionWrapper {
+    border: 2px solid yellow;
+}
+
+@media (min-width: 36rem) {
+    .scrollButtonsWrapper {
+        flex-direction: revert;
+    }
+    .gridCatWrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
