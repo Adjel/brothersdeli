@@ -90,7 +90,6 @@ see marqueeContent at the bottom of this file*/
 }
 
 .articleContent {
-    width: 50%;
     flex-wrap: wrap;
 }
 /* article */
@@ -171,6 +170,9 @@ see marqueeContent at the bottom of this file*/
     }
     .headerImage {
         max-width: 33.333%;
+    }
+    .articleContent {
+        width: 50%;
     }
 }
 
