@@ -21,7 +21,7 @@
   --laptop-and-up: 62rem; /* 992px */
 
   /* Colors */
-  --red: hsl(0 59 40);
+  --red: rgb(175 25 33);
   --primary: hsl(116 29 19);
   --primary-action: hsl(125 39 33);
   --secondary: hsl(56 49 93);
