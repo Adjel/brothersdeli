@@ -137,17 +137,20 @@ see marqueeContent at the bottom of this file*/
 
 .creatorsPhotosSection {
     width: 50%;
+    gap: 6px;
 }
 
 .simonWrapper {
     transform: rotate(4deg);
+    padding: calc(10/16*1rem)
 }
 .pierreWrapper {
     transform: rotate(-4deg);
+    padding: calc(10/16*1rem)
 }
 
 .creatorPhotos {
-    border: 1px solid var(--secondary);
+    border: calc(1.5/16*1rem) solid var(--secondary);
     border-radius: 15px;
     object-fit: contain;
     height: auto;
