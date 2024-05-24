@@ -1,4 +1,4 @@
-.section, .header, .dishCatWrapper, .dishCatHeader, .actionWrapper, .scrollButtonsWrapper {
+.section, .header, .dishCatWrapper, .dishCatHeader, .actionWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,12 +7,69 @@
 }
 
 .section {
+    background-color: var(--primary);
     border: 2px solid blue;
+    overflow-x: auto;
+
+    /* variables */
+    --padding-ten: 0 calc(10/16*1rem);
 }
 
+/* HEADER */
 .header {
+    width: 100%;
     border: 2px solid cyan;
 }
+
+.h1, .h2, .buttonLink, .title {
+    font-weight: var(--font-weight-normal);
+    text-transform: uppercase;
+}
+
+.h1 {
+    font-family: var(--font-thicker);
+    color: var(--secondary);
+    font-size: calc(50/16*1em);
+}
+
+.scrollButtonsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: calc(215/16*1rem);
+    border: 2px solid orange;
+}
+
+.scrollButton {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: var(--padding-ten);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1); 
+    }
+}
+
+.h2 {
+    margin: 0;
+    background-color: var(--secondary);
+    padding: var(--padding-ten);
+    transform: rotate(-5deg);
+}
+
+.buttonLink {
+    width: 100%;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: calc(31/16*1em);
+    font-family: var(--font-merriweather-sans);
+}
+/* HEADER */
 
 .dishCatWrapper {
     border: 2px solid pink;
@@ -20,10 +77,6 @@
 
 .dishCatHeader {
     border: 2px solid red;
-}
-
-.scrollButtonsWrapper {
-    border: 2px solid orange;
 }
 
 .gridCatWrapper {
@@ -36,9 +89,16 @@
     border: 2px solid yellow;
 }
 
+.title {
+    font-family: var(--font-thicker);
+    color: var(--secondary);
+    font-size: calc(40/16*1em);
+}
+
 @media (min-width: 36rem) {
     .scrollButtonsWrapper {
         flex-direction: revert;
+        min-height: calc(175/16*1rem);
     }
     .gridCatWrapper {
         grid-template-columns: repeat(3, 1fr);

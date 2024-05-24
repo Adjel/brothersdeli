@@ -35,14 +35,37 @@ export default function Menu() {
   return (
     <section className={styles.section}>
       <header className={styles.header}>
+        <h1 className={styles.title}>La carte</h1>
         <div className={styles.scrollButtonsWrapper}>
-          <button>nos sandwichs</button>
-          <button>nos sides</button>
-          <button>nos desserts</button>
+          <button className={styles.scrollButton}>
+            <h2 className={styles.h2}>
+              <Link href={""} className={styles.buttonLink}>
+                nos sandwichs
+              </Link>
+            </h2>
+          </button>
+          <button className={styles.scrollButton}>
+            {" "}
+            <h2 className={styles.h2}>
+              <Link href={""} className={styles.buttonLink}>
+                nos sides
+              </Link>
+            </h2>
+          </button>
+          <button className={styles.scrollButton}>
+            {" "}
+            <h2 className={styles.h2}>
+              <Link href={""} className={styles.buttonLink}>
+                nos desserts
+              </Link>
+            </h2>
+          </button>
         </div>
       </header>
       <section className={styles.dishCatWrapper}>
-        <header className={styles.dishCatHeader}>nos sandwichs</header>
+        <header className={styles.dishCatHeader}>
+          <h2 className={styles.title}>nos sandwichs</h2>
+        </header>
         <section className={styles.gridCatWrapper}>
           {dishes.map((dish) => (
             <Link
@@ -58,7 +81,9 @@ export default function Menu() {
         </section>
       </section>
       <section className={styles.dishCatWrapper}>
-        <header className={styles.dishCatHeader}>nos sides</header>
+        <header className={styles.dishCatHeader}>
+          <h2 className={styles.title}>nos sides</h2>
+        </header>
         <section className={styles.gridCatWrapper}>
           {dishes.map((dish) => (
             <Link
@@ -74,7 +99,9 @@ export default function Menu() {
         </section>
       </section>
       <section className={styles.dishCatWrapper}>
-        <header className={styles.dishCatHeader}>nos desserts</header>
+        <header className={styles.dishCatHeader}>
+          <h2 className={styles.title}>nos desserts</h2>
+        </header>
         <section className={styles.gridCatWrapper}>
           {dishes.map((dish) => (
             <Link
