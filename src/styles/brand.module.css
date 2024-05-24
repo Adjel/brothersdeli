@@ -114,6 +114,7 @@ see marqueeContent at the bottom of this file*/
 }
 
 .h2 {
+    text-align: center;
     margin-top: 0;
     margin-bottom: calc(20/16*1rem);
     font-family: var(--font-merriweather-sans);
@@ -182,13 +183,13 @@ see marqueeContent at the bottom of this file*/
 .articleH2 {
     text-transform: uppercase;
     margin-bottom: calc(20/16*1rem);
-    font-size: calc(50/16*1em);
+    font-size: clamp(1.5em, 5vw, 3.125em);
     font-family: var(--font-merriweather-sans);
 }
 
 .articleP {
-    font-size: calc(16/16*1em);
     font-family: var(--font-merriweather);
+    font-size: clamp(0.5em 5vw, 1em);
     margin-bottom: calc(0.9rem);
 }
 
@@ -211,8 +212,6 @@ see marqueeContent at the bottom of this file*/
         max-width: 33.333%;
     }
     .articleCreatorsContent {
-        padding: revert;
-        margin-left: calc(50/16*1rem);
         width: 50%;
     }
     .articleContent {

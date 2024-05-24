@@ -34,7 +34,7 @@ export default function Brand() {
       </section>
       <div className={styles.div}>
         <article className={styles.articleCreators}>
-          <section className={styles.articleContent}>
+          <section className={styles.articleCreatorsContent}>
             <h2 className={styles.h2}>le concept</h2>
             <div className={styles.content}>
               <p className={styles.p}>
