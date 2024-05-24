@@ -72,50 +72,62 @@ export default function Brand() {
         </article>
       </div>
       <article className={styles.article}>
-        <Image className={styles.image} src={NewYork} layout="responsive" />
-        <section className={styles.articleContent}>
-          <h2>le pastrami, c'est quoi ?</h2>
-          <p>
-            C’est une viande de bœuf marinée pendant quatre jours puis coupée en
-            fines tranches qui fond en bouche. T’en as l’eau à la bouche,
-            n’est-ce pas ? Nous aussi.
-          </p>
-          <p>
-            Popularisée par les Juifs venus d’Europe aux Etats-Unis, c’est avant
-            tout une viande qui a vu le jour dans les Balkans, plus précisément
-            en Roumanie.
-          </p>
-          <b>
-            Aujourd’hui, l’un de nos objectifs est de la rendre populaire dans
-            tout l’Hexagone.
-          </b>
-        </section>
+        <div className={styles.articleWrapper}>
+          <section className={styles.articleSection}>
+            <Image className={styles.image} src={NewYork} layout="responsive" />
+          </section>
+          <section className={styles.articleSection}>
+            <section className={styles.articleContent}>
+              <h2 className={styles.articleH2}>le pastrami, c'est quoi ?</h2>
+              <p className={styles.articleP}>
+                C’est une viande de bœuf marinée pendant quatre jours puis
+                coupée en fines tranches qui fond en bouche. T’en as l’eau à la
+                bouche, n’est-ce pas ? Nous aussi.
+              </p>
+              <p className={styles.articleP}>
+                Popularisée par les Juifs venus d’Europe aux Etats-Unis, c’est
+                avant tout une viande qui a vu le jour dans les Balkans, plus
+                précisément en Roumanie.
+              </p>
+              <p className={styles.articleP}>
+                <b>
+                  Aujourd’hui, l’un de nos objectifs est de la rendre populaire
+                  dans tout l’Hexagone.
+                </b>
+              </p>
+            </section>
+          </section>
+        </div>
       </article>
       <article className={styles.article}>
         <section className={styles.articleContent}>
-          <h2>fait maison</h2>
-          <p>
-            L’une des pierres angulaires de notre cuisine est la confection
-            maison de
-            <b>notre pastrami de qualité supérieure</b>.
-          </p>
-          <p>
-            Avec passion et dévouement, notre équipe d’experts culinaires
-            prépare chaque morceau de viande avec soin, en utilisant des
-            méthodes traditionnelles et des épices spécialement sélectionnées
-            pour obtenir des saveurs uniques qui éveilleront vos papilles.
-          </p>
-          <p>
-            Chez nous, « fait maison » signifie bien plus qu’une simple
-            étiquette, c’est le symbole de notre engagement envers
-            l’authenticité, la fraîcheur et la qualité inégalée.
-          </p>
+          <section className={styles.articleSection}>
+            <h2>fait maison</h2>
+            <p>
+              L’une des pierres angulaires de notre cuisine est la confection
+              maison de
+              <b>notre pastrami de qualité supérieure</b>.
+            </p>
+            <p>
+              Avec passion et dévouement, notre équipe d’experts culinaires
+              prépare chaque morceau de viande avec soin, en utilisant des
+              méthodes traditionnelles et des épices spécialement sélectionnées
+              pour obtenir des saveurs uniques qui éveilleront vos papilles.
+            </p>
+            <p>
+              Chez nous, « fait maison » signifie bien plus qu’une simple
+              étiquette, c’est le symbole de notre engagement envers
+              l’authenticité, la fraîcheur et la qualité inégalée.
+            </p>
+          </section>
         </section>
-        <Image
-          className={styles.image}
-          src={ViandePastrami}
-          layout="responsive"
-        />
+        <section className={styles.articleSection}>
+          <Image
+            className={styles.image}
+            src={ViandePastrami}
+            layout="responsive"
+          />
+        </section>
       </article>
     </section>
   );

@@ -1,4 +1,4 @@
-.section, .header, .article, .articleContent, .creatorsPhotosSection {
+.section, .header, .articleWrapper, .articleContent, .creatorsPhotosSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,16 +84,6 @@ see marqueeContent at the bottom of this file*/
 }
 /* marquee */
 
-/* article */
-.article {
-    border: 2px solid orange;
-}
-
-.articleContent {
-    flex-wrap: wrap;
-}
-/* article */
-
 /* creators article */
 .div {
     display: flex;
@@ -106,6 +96,11 @@ see marqueeContent at the bottom of this file*/
 .articleCreators {
     padding: calc(60/16*1rem) 0;
     background-color: var(--primary);
+}
+
+.articleCreatorsContent {
+    padding: calc(15/16*1rem);
+    flex-wrap: wrap;
 }
 
 .content {
@@ -156,13 +151,57 @@ see marqueeContent at the bottom of this file*/
 }
 /* creators article */
 
+/* article */
+.article {
+    width: 100%;
+    background-color: var(--secondary);
+}
+
+.articleWrapper {
+    max-width: calc(1024/16*1rem);
+    padding: calc(50/16*1rem) 0;
+}
+
+.articleSection {
+    display: contents;
+}
+
+
+.articleContent {
+    padding: calc(15/16*1rem);
+    flex-wrap: wrap;
+}
+
+.articleH2, .articleP {
+    text-align: center;
+    font-weight: var(--font-weight-normal);
+    color: var(--primary);
+    margin: 0;
+}
+
+.articleH2 {
+    text-transform: uppercase;
+    margin-bottom: calc(20/16*1rem);
+    font-size: calc(50/16*1em);
+    font-family: var(--font-merriweather-sans);
+}
+
+.articleP {
+    font-size: calc(16/16*1em);
+    font-family: var(--font-merriweather);
+    margin-bottom: calc(0.9rem);
+}
+
 .image {
     object-fit: contain;
     height: auto;
+    border-radius: 15px;
 }
+/* article */
+
 
 @media (min-width: 36rem) {
-    .header, .article, .creatorsPhotosSection, .articleCreators {
+    .header, .articleWrapper, .creatorsPhotosSection {
         flex-direction: revert;
     } 
     .mobileContainer {
@@ -171,8 +210,14 @@ see marqueeContent at the bottom of this file*/
     .headerImage {
         max-width: 33.333%;
     }
-    .articleContent {
+    .articleCreatorsContent {
+        padding: revert;
+        margin-left: calc(50/16*1rem);
         width: 50%;
+    }
+    .articleContent {
+        padding: revert;
+        margin-left: calc(50/16*1rem);
     }
     .creatorsPhotosSection {
         display: flex;
@@ -182,6 +227,11 @@ see marqueeContent at the bottom of this file*/
         justify-content: center;
         align-items: center;
         max-width: calc(1140/16*1rem);
+        height: auto;
+    }
+    .articleSection {
+        display: revert;
+        width: 50%;
         height: auto;
     }
 }
