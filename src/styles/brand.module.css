@@ -1,4 +1,4 @@
-.section, .header, .article, .articleContent, .articleCreators, .creatorsPhotosSection {
+.section, .header, .article, .articleContent, .creatorsPhotosSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,8 +104,6 @@ see marqueeContent at the bottom of this file*/
 }
 
 .articleCreators {
-    max-width: calc(1140/16*1rem);
-    height: auto;
     padding: calc(60/16*1rem) 0;
     background-color: var(--primary);
 }
@@ -135,6 +133,8 @@ see marqueeContent at the bottom of this file*/
 }
 
 .creatorsPhotosSection {
+    display: contents;
+    align-self: flex-start;
     width: 50%;
     gap: 6px;
 }
@@ -173,6 +173,16 @@ see marqueeContent at the bottom of this file*/
     }
     .articleContent {
         width: 50%;
+    }
+    .creatorsPhotosSection {
+        display: flex;
+    }
+    .articleCreators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: calc(1140/16*1rem);
+        height: auto;
     }
 }
 
