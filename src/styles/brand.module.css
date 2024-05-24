@@ -183,13 +183,13 @@ see marqueeContent at the bottom of this file*/
 .articleH2 {
     text-transform: uppercase;
     margin-bottom: calc(20/16*1rem);
-    font-size: clamp(1.5em, 5vw, 3.125em);
+    font-size: clamp(1.75em, 2.5vw, 3.125em);
     font-family: var(--font-merriweather-sans);
 }
 
 .articleP {
     font-family: var(--font-merriweather);
-    font-size: clamp(0.5em 5vw, 1em);
+    font-size: clamp(0.5em, 2.5vw, 1em);
     margin-bottom: calc(0.9rem);
 }
 
