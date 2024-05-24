@@ -77,7 +77,7 @@ export default function Brand() {
             <Image className={styles.image} src={NewYork} layout="responsive" />
           </section>
           <section className={styles.articleSection}>
-            <section className={styles.articleContent}>
+            <section className={styles.endArticleContent}>
               <h2 className={styles.articleH2}>le pastrami, c'est quoi ?</h2>
               <p className={styles.articleP}>
                 C’est une viande de bœuf marinée pendant quatre jours puis
@@ -100,34 +100,37 @@ export default function Brand() {
         </div>
       </article>
       <article className={styles.article}>
-        <section className={styles.articleContent}>
+        <div className={styles.articleWrapper}>
           <section className={styles.articleSection}>
-            <h2>fait maison</h2>
-            <p>
-              L’une des pierres angulaires de notre cuisine est la confection
-              maison de
-              <b>notre pastrami de qualité supérieure</b>.
-            </p>
-            <p>
-              Avec passion et dévouement, notre équipe d’experts culinaires
-              prépare chaque morceau de viande avec soin, en utilisant des
-              méthodes traditionnelles et des épices spécialement sélectionnées
-              pour obtenir des saveurs uniques qui éveilleront vos papilles.
-            </p>
-            <p>
-              Chez nous, « fait maison » signifie bien plus qu’une simple
-              étiquette, c’est le symbole de notre engagement envers
-              l’authenticité, la fraîcheur et la qualité inégalée.
-            </p>
+            <section className={styles.startArticleContent}>
+              <h2 className={styles.articleH2}>fait maison</h2>
+              <p className={styles.articleP}>
+                L’une des pierres angulaires de notre cuisine est la confection
+                maison de
+                <b>notre pastrami de qualité supérieure</b>.
+              </p>
+              <p className={styles.articleP}>
+                Avec passion et dévouement, notre équipe d’experts culinaires
+                prépare chaque morceau de viande avec soin, en utilisant des
+                méthodes traditionnelles et des épices spécialement
+                sélectionnées pour obtenir des saveurs uniques qui éveilleront
+                vos papilles.
+              </p>
+              <p className={styles.articleP}>
+                Chez nous, « fait maison » signifie bien plus qu’une simple
+                étiquette, c’est le symbole de notre engagement envers
+                l’authenticité, la fraîcheur et la qualité inégalée.
+              </p>
+            </section>
           </section>
-        </section>
-        <section className={styles.articleSection}>
-          <Image
-            className={styles.image}
-            src={ViandePastrami}
-            layout="responsive"
-          />
-        </section>
+          <section className={styles.articleSection}>
+            <Image
+              className={styles.image}
+              src={ViandePastrami}
+              layout="responsive"
+            />
+          </section>
+        </div>
       </article>
     </section>
   );

@@ -160,7 +160,7 @@ see marqueeContent at the bottom of this file*/
 
 .articleWrapper {
     max-width: calc(1024/16*1rem);
-    padding: calc(50/16*1rem) 0;
+    padding: calc(50/16*1rem) calc(10/16*1rem);
 }
 
 .articleSection {
@@ -168,7 +168,12 @@ see marqueeContent at the bottom of this file*/
 }
 
 
-.articleContent {
+.endArticleContent {
+    padding: calc(15/16*1rem);
+    flex-wrap: wrap;
+}
+
+.startArticleContent {
     padding: calc(15/16*1rem);
     flex-wrap: wrap;
 }
@@ -214,9 +219,13 @@ see marqueeContent at the bottom of this file*/
     .articleCreatorsContent {
         width: 50%;
     }
-    .articleContent {
+    .endArticleContent {
         padding: revert;
-        margin-left: calc(50/16*1rem);
+        margin-left: calc(30/16*1rem);
+    }
+    .startArticleContent {
+        padding: calc(10/16*1rem);
+        margin-right: calc(20/16*1rem);
     }
     .creatorsPhotosSection {
         display: flex;
