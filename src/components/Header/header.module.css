@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  max-width: 100%;
+  width: 100%;
   min-height: calc(100/16*1rem);
   flex-direction: column;
   justify-content: space-evenly;
@@ -63,6 +63,9 @@
   /* tablet and up*/
 @media (min-width: 36rem) {
     .header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
         flex-direction: row;
         background-color: var(--secondary);
         padding: revert;

@@ -167,7 +167,6 @@ see marqueeContent at the bottom of this file*/
     display: contents;
 }
 
-
 .endArticleContent {
     padding: calc(15/16*1rem);
     flex-wrap: wrap;
