@@ -12,7 +12,8 @@
     overflow-x: auto;
 
     /* variables */
-    --padding-ten: 0 calc(10/16*1rem);
+    --padding-inline-ten: 0 calc(10/16*1rem);
+    --padding-ten: calc(10/16*1rem);
 }
 
 /* HEADER */
@@ -21,7 +22,7 @@
     border: 2px solid cyan;
 }
 
-.h1, .h2, .buttonLink, .title {
+.h1, .h2, .buttonLink {
     font-weight: var(--font-weight-normal);
     text-transform: uppercase;
 }
@@ -39,6 +40,7 @@
     align-items: center;
     width: 100%;
     min-height: calc(215/16*1rem);
+    margin: calc(30/16*1rem) 0;
     border: 2px solid orange;
 }
 
@@ -47,7 +49,7 @@
     width: 100%;
     border: none;
     background: none;
-    padding: var(--padding-ten);
+    padding: var(--padding-inline-ten);
     transition: transform 0.3s ease-in-out;
 
     &:hover {
@@ -59,7 +61,7 @@
     flex: 1;
     margin: 0;
     background-color: var(--secondary);
-    padding: var(--padding-ten);
+    padding: var(--padding-inline-ten);
     transform: rotate(-5deg);
 }
 
@@ -68,7 +70,7 @@
     flex: 1;
     margin: 0;
     background-color: var(--secondary);
-    padding: var(--padding-ten);
+    padding: var(--padding-inline-ten);
     transform: rotate(-5deg);
 }
 
@@ -77,7 +79,7 @@
     flex: 1;
     margin: 0;
     background-color: var(--secondary);
-    padding: var(--padding-ten);
+    padding: var(--padding-inline-ten);
     transform: rotate(-5deg);
 }
 /* create the one/two lines effect for side */
@@ -91,37 +93,97 @@
     font-family: var(--font-merriweather-sans);
     white-space: nowrap;
 }
-
 /* HEADER */
 
-.dishCatWrapper {
-    border: 2px solid pink;
-}
-
+/* dish category */
 .dishCatHeader {
+    padding: var(--padding-ten) 0;
     border: 2px solid red;
 }
 
+.title, .p, .itemName {
+    color: var(--secondary);
+    text-align: center;
+    margin: 0;
+    font-weight: var(--font-weight-normal);
+  
+}
+
+.title {
+    font-family: var(--font-thicker);
+    font-size: calc(40/16*1em);
+    margin-bottom: calc(20/16*1rem);
+    text-transform: uppercase;
+}
+
+.p {
+    font-family: var(--font-merriweather);
+    font-size: var(--font-size-normal);
+    margin-bottom: 0.9rem;
+}
+
+
 .gridCatWrapper {
     display: grid;
+    width: 100%;
     grid-template-columns: 1;
+    gap: calc(10/16*1rem);
+    row-gap: calc(30/16*1rem);
+    padding-bottom: calc(100/16*1rem);
     border: 2px solid green;
+
+    /* because we have two empty childs to create
+    space around last child and center it
+    we have to delete borders of empty items
+    We have to select child's child's grid's child */
+    /* gridCatWrapper > gridItem > imageItemWrapper > imageItem */
+    & > *:last-child > .imageItemWrapper > .imageItem, & > *:nth-last-child(3) > .imageItemWrapper > .imageItem {
+        border: none;
+    }
+}
+
+.gridItem {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-ten);
+    text-decoration: none;
+}
+
+.imageItemWrapper {
+    display: flex;
+    width: 80%;
+    padding: var(--padding-ten);
+    margin-bottom: calc(20/16*1rem);
+}
+
+.imageItem {
+    border: 0.0625rem solid var(--secondary);
+}
+
+.itemName {
+    font-size: var(--font-size-label);
+    font-family: var(--font-merriweather-sans);
+}
+
+/* dish category */
+.dishCatWrapper {
+    border: 2px solid pink;
 }
 
 .actionWrapper {
     border: 2px solid yellow;
 }
 
-.title {
-    font-family: var(--font-thicker);
-    color: var(--secondary);
-    font-size: calc(40/16*1em);
-}
+
 
 @media (min-width: 36rem) {
     .scrollButtonsWrapper {
         flex-direction: revert;
         min-height: calc(175/16*1rem);
+        margin: 0;
     }
     .gridCatWrapper {
         grid-template-columns: repeat(3, 1fr);
