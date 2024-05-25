@@ -2,18 +2,24 @@ import { useRouter } from "next/router";
 import styles from "../../styles/dish.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { IoMdArrowBack } from "react-icons/io";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import OrderingButton from "@/components/OrderingButton";
+import { useEffect } from "react";
 
 export default function MenuDishPage() {
   const router = useRouter();
-  const { name, src, desc, width, height } = router.query;
+  const { name, src, width, height, desc, ingList, more } = router.query;
 
   return (
     <section className={styles.dishWrapper}>
-      <Link href="/la-carte" className={styles.backButtonWrapper}>
-        La carte
-      </Link>
+      <div className={styles.wrapper}>
+        <Link href="/la-carte" className={styles.backButtonWrapper}>
+          <span className={styles.iconButtonWrapper}>
+            <IoMdArrowRoundBack size={"1.2em"} fontWeight={"bold"} />
+            La carte
+          </span>
+        </Link>
+      </div>
       <section className={styles.dishDescriptionWrapper}>
         <article className={styles.articleWrapper}>
           <div className={styles.imageWrapper}>
@@ -24,20 +30,24 @@ export default function MenuDishPage() {
               layout="responsive"
             />
           </div>
-          <header>
-            <h1>{name}</h1>
-          </header>
-          <ul>
-            {desc?.map((item) => (
-              <li>
-                <p>{item}</p>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.wrapper}>
+            <header className={styles.header}>
+              <h1 className={styles.title}>{name}</h1>
+            </header>
+            <p className={styles.itemContent}>{desc}</p>
+            <ul className={styles.ingredientList}>
+              {ingList?.map((item) => (
+                <li className={styles.ingredientItem}>
+                  <p className={styles.itemContent}>{item}</p>
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginBottom: `${20 / 16}rem` }}>
+              <p className={styles.itemContent}>{more}</p>
+            </div>
+            <OrderingButton />
+          </div>
         </article>
-        <div>
-          <OrderingButton />
-        </div>
       </section>
     </section>
   );

@@ -43,32 +43,39 @@ export default function Menu() {
   const dishes = [
     {
       id: "le-brothers",
+      title: `Le Brother's`,
       name: `Le Brother's 125gr`,
       src: leBrother,
       product: leBrotherDetails,
       desc: [
         "Découvrez notre best-seller, un délicieux sandwich avec 125gr de pastrami de bœuf. ",
+      ],
+      ingList: [
         "Du pain de seigle (Rye bread en anglais)",
         "Du pastrami de bœuf",
         "Des pickles",
         "Des oignons confits",
         "Une sauce moutarde-miel",
-        "Existe également avec 220gr de pastrami pour un maximum de gourmandise, Le Big Brothers.",
       ],
+      more: "Existe également avec 220gr de pastrami pour un maximum de gourmandise, Le Big Brothers.",
     },
     {
       id: "le-big-brothers",
+      title: "Le BIG Brother's",
       name: "Le BIG Brother's 225gr",
       src: leBigBrothers,
       product: leBigBrothersDetail,
       desc: [
         "Le sandwich idéal pour les plus gourmands avec une montagne de pastrami.",
+      ],
+      ingList: [
         "Du pain de seigle",
         "220gr de pastrami de bœuf",
         "Des pickles",
         "Des oignons confits",
         "Une sauce moutarde-miel",
       ],
+      more: "Retrouvez son petit frère juste ici.",
     },
     {
       id: "le-og",
@@ -77,6 +84,8 @@ export default function Menu() {
       product: leOgDetail,
       desc: [
         "Le sandwich qui colle parfaitement aux puristes, c’est l’original qui permet de revenir aux sources. C’est le sandwich au pastrami qu’on connait et qui nous décevra jamais.",
+      ],
+      ingList: [
         "Un pain de seigle (ou Rye bread en anglais)",
         "Du pastrami de bœuf maison",
         "Des pickles ",
@@ -84,6 +93,7 @@ export default function Menu() {
         "Une sauce ketchup",
         "Les choses simples, on sait aussi les apprécier.",
       ],
+      more: "",
     },
     {
       id: "le-reuben",
@@ -92,6 +102,8 @@ export default function Menu() {
       product: lereubenDetail,
       desc: [
         "Encore une recette de sandwich au pastrami venant tout droit des Etats-Unis.",
+      ],
+      ingList: [
         "Du pain de seigle",
         "Du pastrami de bœuf",
         "Du choux blanc",
@@ -99,6 +111,7 @@ export default function Menu() {
         "Des pickles",
         "De la sauce moutarde-miel",
       ],
+      more: "",
     },
     {
       id: "le-turkey-club",
@@ -107,6 +120,8 @@ export default function Menu() {
       product: leTukeyDetail,
       desc: [
         "Bienvenue dans l’univers gourmand de notre sandwich au pastrami de dinde dans lequel se cache une symphonie de saveurs.",
+      ],
+      ingList: [
         "Du pastrami de dinde maison",
         "Du cheddar fondant",
         "Des pickles d’oignons pour une note de piquant subtil",
@@ -114,6 +129,7 @@ export default function Menu() {
         "Une onctueuse mayonnaise",
         "Une sauce zhoug, pour  la petite touche épicée",
       ],
+      more: "",
     },
     {
       id: "le-green-brothers",
@@ -122,6 +138,8 @@ export default function Menu() {
       product: leGreenDetail,
       desc: [
         "On prouve qu’un sandwich végé peut être gourmand, même sans pastrami. En somme, pas besoin d’être végétarien pour être conquis par le Green Brothers, à méditer.",
+      ],
+      ingList: [
         "Un pain buns préparé chaque matin par notre fournisseur",
         "Des falafels",
         "Des aubergines grillées",
@@ -130,6 +148,7 @@ export default function Menu() {
         "Et enfin la sauce du tonton Simon",
         "Alors, convaincus ? ",
       ],
+      more: "",
     },
   ];
 
@@ -141,6 +160,8 @@ export default function Menu() {
       product: leBabDetail,
       desc: [
         "Du soleil dans l’assiette avec ce magnifique caviar d’aubergines, une recette tout droit venue du Liban qui saura accompagner parfaitement votre sandwich.",
+      ],
+      ingList: [
         "Des aubergines (évidemment)",
         "Des gousses d’ail",
         "Du Tahini, une crème de sésame",
@@ -149,6 +170,7 @@ export default function Menu() {
         "Des graines de grenades",
         "Du Persil frais",
       ],
+      more: "",
     },
     {
       id: "la-tchaktchouka",
@@ -157,25 +179,29 @@ export default function Menu() {
       product: laTchaktchouka,
       desc: [
         "Une petite ratatouille de poivrons et tomates aux saveurs du sud qui se déguste froide ou réchauffer très légèrement.",
+      ],
+      ingList: [
         "Des poivrons rouges",
         "Des tomates",
         "Des oignons",
         "De l’ail",
         "Des herbes fraîches",
       ],
+      more: "",
     },
     {
       id: "le-houmous",
       name: "Le Houmous",
       src: leHoumous,
       product: leHoumousDetail,
-      desc: [
-        "Découvrez notre délicieux houmous maison aux saveurs du sud. ",
+      desc: ["Découvrez notre délicieux houmous maison aux saveurs du sud. "],
+      ingList: [
         "Des pois chiches (logique)",
         "Un beau filet d’huile d’olive",
         "Une touche de paprika ",
         "Du persil frais",
       ],
+      more: "",
     },
     {
       id: "les-pommes-de-terre-grenaille",
@@ -184,32 +210,32 @@ export default function Menu() {
       product: lesPdtGrenaillesDetail,
       desc: [
         "Les pommes de terres grenailles, délicieuses et savoureuses, sont de petites merveilles culinaires qui ajoutent une touche d’élégance à n’importe quel repas.",
+      ],
+      ingList: [
         "Des belles pommes de terre",
         "Du citron ",
         "Du thym",
         "Du persil frais",
       ],
+      more: "",
     },
     {
       id: "chips-au-sel-de-mer",
       name: "Chips au sel de mer",
       src: lesChipsAuSelDeMer,
       product: lesChipsMerDetail,
-      desc: [
-        "Sel de mer - 40g",
-        "Découvrez les chips de pommes de terre de la marque Pipers aromatisées au sel de mer cristallisé. Le sel utilisé est récolté quotidiennement dans le détroit de Menai situé au nord-ouest du Pays de Galles. Simple et efficace, elles ne déçoivent jamais.",
-      ],
+      desc: ["Sel de mer - 40g"],
+      ingList: [],
+      more: "Découvrez les chips de pommes de terre de la marque Pipers aromatisées au sel de mer cristallisé. Le sel utilisé est récolté quotidiennement dans le détroit de Menai situé au nord-ouest du Pays de Galles. Simple et efficace, elles ne déçoivent jamais.",
     },
     {
       id: "chips-au-cheddar-et-oignons",
       name: "Chips au cheddar et oignons",
       src: lesChipsCheddarOignons,
       product: lesChipsCODetail,
-      desc: [
-        "Cheddar et oignon - 40g",
-        "Il y a les classiques, mais également les plus originales. Voici les chips aromatisés au cheddar et à l’oignon fabriqués au Royaume-Uni.",
-        "Sans huile de palme, ni colorant artificiel, ni conservateur.",
-      ],
+      desc: ["Cheddar et oignon - 40g"],
+      ingList: [],
+      more: "Il y a les classiques, mais également les plus originales. Voici les chips aromatisés au cheddar et à l’oignon fabriqués au Royaume-Uni. Sans huile de palme, ni colorant artificiel, ni conservateur.",
     },
   ];
 
@@ -278,11 +304,13 @@ export default function Menu() {
               href={{
                 pathname: `/la-carte/${item.id}`,
                 query: {
-                  name: item.name,
+                  name: item.title !== "" ? item.title : item.name,
                   src: encodeURIComponent(item.product.src),
                   width: item.product.width,
                   height: item.product.height,
                   desc: item.desc,
+                  ingList: item.ingList,
+                  more: item.more,
                 },
               }}
             >
@@ -317,6 +345,8 @@ export default function Menu() {
                   width: item.product.width,
                   height: item.product.height,
                   desc: item.desc,
+                  ingList: item.ingList,
+                  more: item.more,
                 },
               }}
             >
