@@ -8,7 +8,6 @@
 
 .section {
     background-color: var(--primary);
-    border: 2px solid blue;
     overflow-x: auto;
 
     /* variables */
@@ -19,7 +18,7 @@
 /* HEADER */
 .header {
     width: 100%;
-    border: 2px solid cyan;
+    padding-top: calc(25/16*1rem);
 }
 
 .h1, .h2, .buttonLink {
@@ -41,7 +40,6 @@
     width: 100%;
     min-height: calc(215/16*1rem);
     margin: calc(30/16*1rem) 0;
-    border: 2px solid orange;
 }
 
 .scrollButton {
@@ -98,7 +96,6 @@
 /* dish category */
 .dishCatHeader {
     padding: var(--padding-ten) 0;
-    border: 2px solid red;
 }
 
 .title, .p, .itemName {
@@ -130,7 +127,6 @@
     gap: calc(10/16*1rem);
     row-gap: calc(30/16*1rem);
     padding-bottom: calc(100/16*1rem);
-    border: 2px solid green;
 
     /* because we have two empty childs to create
     space around last child and center it
@@ -167,15 +163,25 @@
     font-size: var(--font-size-label);
     font-family: var(--font-merriweather-sans);
 }
-
 /* dish category */
-.dishCatWrapper {
-    border: 2px solid pink;
+
+/* action */
+.actionWrapper {
+    width: 100%;
+    min-height: calc(127/16*1rem);
+    padding: var(--padding-ten);
+    background-color: var(--secondary);
 }
 
-.actionWrapper {
-    border: 2px solid yellow;
+.actionP {
+    margin: 0;
+    margin-bottom: calc(20/16*1rem);
+    font-family: var(--font-merriweather-sans);
+    font-size: calc(25/16*1em);
+    font-weight: var(--font-weight-normal);
+    color: var(--primary);
 }
+/* action */
 
 
 

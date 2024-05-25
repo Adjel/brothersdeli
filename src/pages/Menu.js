@@ -25,7 +25,7 @@ export default function Menu() {
   const dishes = [
     {
       id: "le-brothers",
-      name: `Le Brother${`&aposs;`}s 125gr`,
+      name: `Le Brother's 125gr`,
       src: leBrother,
     },
     {
@@ -200,7 +200,7 @@ export default function Menu() {
         </section>
       </section>
       <section className={styles.actionWrapper}>
-        <p>Alors t'attends quoi</p>
+        <p className={styles.actionP}>Alors t'attends quoi ?</p>
         <OrderingButton />
       </section>
     </section>
