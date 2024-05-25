@@ -56,19 +56,42 @@
 }
 
 .h2 {
+    flex: 1;
     margin: 0;
     background-color: var(--secondary);
     padding: var(--padding-ten);
     transform: rotate(-5deg);
 }
 
+/* create the one/two lines effect for side */
+.h2oneLine {
+    flex: 1;
+    margin: 0;
+    background-color: var(--secondary);
+    padding: var(--padding-ten);
+    transform: rotate(-5deg);
+}
+
+.h2twoLines {
+    display: none;
+    flex: 1;
+    margin: 0;
+    background-color: var(--secondary);
+    padding: var(--padding-ten);
+    transform: rotate(-5deg);
+}
+/* create the one/two lines effect for side */
+
 .buttonLink {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: var(--primary);
     font-size: calc(31/16*1em);
     font-family: var(--font-merriweather-sans);
+    white-space: nowrap;
 }
+
 /* HEADER */
 
 .dishCatWrapper {
@@ -102,5 +125,25 @@
     }
     .gridCatWrapper {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .buttonLink {
+        white-space: pre-wrap;
+    }
+    .h2oneLine {
+        display: none;
+    }
+    .h2twoLines {
+        display: revert;
+    }
+}
+@media (min-width: 62rem) {
+    .buttonLink {
+        white-space: nowrap;
+    }
+    .h2oneLine {
+        display: revert;
+    }
+    .h2twoLines {
+        display: none;
     }
 }

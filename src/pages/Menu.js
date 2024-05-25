@@ -46,9 +46,15 @@ export default function Menu() {
           </button>
           <button className={styles.scrollButton}>
             {" "}
-            <h2 className={styles.h2}>
+            <h2 className={styles.h2oneLine}>
               <Link href={""} className={styles.buttonLink}>
                 nos sides
+              </Link>
+            </h2>
+            <h2 className={styles.h2twoLines}>
+              <Link href={""} className={styles.buttonLink}>
+                <span>nos</span>
+                <span>sides</span>
               </Link>
             </h2>
           </button>
