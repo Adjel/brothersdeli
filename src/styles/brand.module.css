@@ -35,7 +35,6 @@
 .headerSection {
     align-self: flex-start;
     min-width: 33.333%;
-    border: 2px solid cyan;
 }
 .headerImage {
     object-fit: contain;
