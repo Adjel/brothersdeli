@@ -23,7 +23,7 @@
     width: 100%;
     padding-top: calc(100/16*1rem);
     padding-bottom: calc(150/16*1rem);
-    border: 2px solid orange;
+    border: 2px solid darkorchid;
 }
 
 .imageWrapper {
@@ -35,11 +35,11 @@
 }
 
 .dishDescriptionWrapper {
-    border: 2px solid darkorchid;
+    border: 2px solid orange;
 }
 
 @media (min-width: 36rem) {
-    .articleWrapper {
+    .dishDescriptionWrapper {
         flex-direction: revert;
     }
 }
