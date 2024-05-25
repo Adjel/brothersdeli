@@ -1,0 +1,45 @@
+.dishWrapper, .backButtonWrapper, .articleWrapper, .dishDescriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dishWrapper {
+    max-width: 100%;
+    border: 2px solid blue;
+
+    /* variables */
+    --ten-px: calc(10/16*1rem);
+    --twenty-px: calc(20/16*1rem)
+}
+
+.backButtonWrapper {
+    width: 100%;
+    border: 2px solid green;
+}
+
+.articleWrapper {
+    width: 100%;
+    padding-top: calc(100/16*1rem);
+    padding-bottom: calc(150/16*1rem);
+    border: 2px solid orange;
+}
+
+.imageWrapper {
+    display: flex;
+    width: 100%;
+    max-width: calc(767/16*1rem);
+    padding: var(--ten-px);
+    border: 2px solid cyan;
+}
+
+.dishDescriptionWrapper {
+    border: 2px solid darkorchid;
+}
+
+@media (min-width: 36rem) {
+    .articleWrapper {
+        flex-direction: revert;
+    }
+}

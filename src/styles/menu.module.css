@@ -119,7 +119,6 @@
     margin-bottom: 0.9rem;
 }
 
-
 .gridCatWrapper {
     display: grid;
     width: 100%;
@@ -127,15 +126,6 @@
     gap: calc(10/16*1rem);
     row-gap: calc(30/16*1rem);
     padding-bottom: calc(100/16*1rem);
-
-    /* because we have two empty childs to create
-    space around last child and center it
-    we have to delete borders of empty items
-    We have to select child's child's grid's child */
-    /* gridCatWrapper > gridItem > imageItemWrapper > imageItem */
-    & > *:last-child > .imageItemWrapper > .imageItem, & > *:nth-last-child(3) > .imageItemWrapper > .imageItem {
-        border: none;
-    }
 }
 
 .gridItem {
