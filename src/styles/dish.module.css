@@ -1,0 +1,92 @@
+.dishWrapper, .backButtonWrapper, .articleWrapper, .dishDescriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dishWrapper {
+    max-width: 100%;
+
+    /* variables */
+    --ten-px: calc(10/16*1rem);
+    --twenty-px: calc(20/16*1rem)
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: var(--ten-px);
+}
+
+.backButtonWrapper {
+    max-width: 100%;
+    align-self: start;
+    padding: var(--ten-px) calc(34/16*1rem);
+    color: var(--primary);
+}
+
+.iconButtonWrapper {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-weight-six);
+}
+
+/* article */
+.dishDescriptionWrapper {
+    padding-bottom: calc(150/16*1rem);
+}
+
+.articleWrapper {
+    width: 100%;
+    align-items: start;
+    padding-top: calc(100/16*1rem);
+    color: var(--primary);
+}
+
+.imageWrapper {
+    display: flex;
+    max-width: calc(767/16*1rem);
+    padding: var(--ten-px);
+}
+
+.header {
+    align-self: flex-start;
+}
+
+.title {
+    margin: 0 0 var(--twenty-px) 0;
+    font-family: var(--font-thicker);
+    font-size: calc(45/16*1rem);
+    font-weight: var(--font-weight-six);
+    text-transform: uppercase;
+}
+
+.ingredientList {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: 0;
+    margin-bottom: calc(20/16*1rem);
+}
+
+.itemContent {
+    margin: 0;
+    padding: 0 0 0.9rem 0;
+    font-size: var(--font-size-14);
+}
+/* article */
+
+@media (min-width: 36rem) {
+    .articleWrapper {
+        flex-direction: revert;
+    }
+    .imageWrapper {
+        flex: 1;
+    }
+    .wrapper {
+        flex: 2;
+    }
+}
