@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/router";
 import styles from "../../styles/dish.module.css";
 import Link from "next/link";
@@ -8,7 +9,8 @@ import { useEffect } from "react";
 
 export default function MenuDishPage() {
   const router = useRouter();
-  const { name, src, width, height, desc, ingList, more } = router.query;
+  const { name, src, width, height, desc, ingList, more, linkDesc, linkHref } =
+    router.query;
 
   return (
     <section className={styles.dishWrapper}>
@@ -24,6 +26,7 @@ export default function MenuDishPage() {
         <article className={styles.articleWrapper}>
           <div className={styles.imageWrapper}>
             <Image
+              alt="une photo du produit"
               src={decodeURIComponent(src)}
               width={width}
               height={height}
@@ -43,7 +46,18 @@ export default function MenuDishPage() {
               ))}
             </ul>
             <div style={{ marginBottom: `${20 / 16}rem` }}>
-              <p className={styles.itemContent}>{more}</p>
+              <p className={styles.itemContent}>
+                {more}
+                {linkDesc && (
+                  <>
+                    {" "}
+                    <Link href={linkHref} style={{ color: "var(--primary)" }}>
+                      {linkDesc}
+                    </Link>
+                    .
+                  </>
+                )}
+              </p>
             </div>
             <OrderingButton />
           </div>

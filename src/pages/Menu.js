@@ -57,7 +57,11 @@ export default function Menu() {
         "Des oignons confits",
         "Une sauce moutarde-miel",
       ],
-      more: "Existe également avec 220gr de pastrami pour un maximum de gourmandise, Le Big Brothers.",
+      more: "Existe également avec 220gr de pastrami pour un maximum de gourmandise,",
+      link: {
+        desc: "Le Big Brothers",
+        href: `/la-carte/le-big-brothers`,
+      },
     },
     {
       id: "le-big-brothers",
@@ -75,7 +79,11 @@ export default function Menu() {
         "Des oignons confits",
         "Une sauce moutarde-miel",
       ],
-      more: "Retrouvez son petit frère juste ici.",
+      more: "Retrouvez son petit frère juste",
+      link: {
+        desc: "ici",
+        href: `/la-carte/le-brothers`,
+      },
     },
     {
       id: "le-og",
@@ -250,10 +258,6 @@ export default function Menu() {
     },
   ];
 
-  useEffect(() => {
-    console.log({ dishes });
-  });
-
   return (
     <section className={styles.section}>
       <header className={styles.header}>
@@ -313,11 +317,14 @@ export default function Menu() {
                   desc: item.desc,
                   ingList: item.ingList,
                   more: item.more,
+                  linkDesc: item.link?.desc,
+                  linkHref: item.link?.href,
                 },
               }}
             >
               <div className={styles.imageItemWrapper}>
                 <Image
+                  alt="une photo d'un sandwich"
                   className={styles.imageItem}
                   src={item.src}
                   layout="responsive"
@@ -351,11 +358,14 @@ export default function Menu() {
                   desc: item.desc,
                   ingList: item.ingList,
                   more: item.more,
+                  linkDesc: item.link?.desc,
+                  linkHref: item.link?.href,
                 },
               }}
             >
               <div className={styles.imageItemWrapper}>
                 <Image
+                  alt="une photo d'un side"
                   className={styles.imageItem}
                   src={item.src}
                   layout="responsive"
@@ -377,6 +387,7 @@ export default function Menu() {
             <div className={styles.gridItem} key={item.id}>
               <div className={styles.imageItemWrapper}>
                 <Image
+                  alt="une photo d'un dessert"
                   className={styles.imageItem}
                   src={item.src}
                   layout="responsive"
