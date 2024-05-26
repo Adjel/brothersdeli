@@ -176,7 +176,7 @@ export default function Menu() {
       id: "la-tchaktchouka",
       name: "Le Tchaktchouka",
       src: laTchaktchouka,
-      product: laTchaktchouka,
+      product: laTchakDetail,
       desc: [
         "Une petite ratatouille de poivrons et tomates aux saveurs du sud qui se déguste froide ou réchauffer très légèrement.",
       ],
@@ -261,19 +261,19 @@ export default function Menu() {
         <div className={styles.scrollButtonsWrapper}>
           <button className={styles.scrollButton}>
             <h2 className={styles.h2}>
-              <Link href={""} className={styles.buttonLink}>
+              <Link href={"#sandwichs"} className={styles.buttonLink}>
                 nos sandwichs
               </Link>
             </h2>
           </button>
           <button className={styles.scrollButton}>
             <h2 className={styles.h2oneLine}>
-              <Link href={""} className={styles.buttonLink}>
+              <Link href={"#sides"} className={styles.buttonLink}>
                 nos sides
               </Link>
             </h2>
             <h2 className={styles.h2twoLines}>
-              <Link href={""} className={styles.buttonLink}>
+              <Link href={"#sides"} className={styles.buttonLink}>
                 <span>nos</span>
                 <span>sides</span>
               </Link>
@@ -281,7 +281,7 @@ export default function Menu() {
           </button>
           <button className={styles.scrollButton}>
             <h2 className={styles.h2}>
-              <Link href={""} className={styles.buttonLink}>
+              <Link href={"#desserts"} className={styles.buttonLink}>
                 nos desserts
               </Link>
             </h2>
@@ -290,7 +290,9 @@ export default function Menu() {
       </header>
       <section className={styles.dishCatWrapper}>
         <header className={styles.dishCatHeader}>
-          <h2 className={styles.title}>nos sandwichs</h2>
+          <h2 className={styles.title} id="sandwichs">
+            nos sandwichs
+          </h2>
           <p className={styles.p}>
             Découvrez nos recettes originales de sandwich au pastrami, sans
             oublier la version végétarienne.
@@ -330,7 +332,9 @@ export default function Menu() {
       </section>
       <section className={styles.dishCatWrapper}>
         <header className={styles.dishCatHeader}>
-          <h2 className={styles.title}>nos sides</h2>
+          <h2 className={styles.title} id="sides">
+            nos sides
+          </h2>
         </header>
         <section className={styles.gridCatWrapper}>
           {sides.map((item) => (
@@ -364,7 +368,9 @@ export default function Menu() {
       </section>
       <section className={styles.dishCatWrapper}>
         <header className={styles.dishCatHeader}>
-          <h2 className={styles.title}>nos desserts</h2>
+          <h2 className={styles.title} id="desserts">
+            nos desserts
+          </h2>
         </header>
         <section className={styles.gridCatWrapper}>
           {desserts.map((item) => (
