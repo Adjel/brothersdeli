@@ -16,9 +16,9 @@ export default function BecomeFranchise() {
   });
 
   const [errors, setErrors] = useState({
-    isError: false,
-    isPhoneError: false,
-    isEmailError: false,
+    isError: undefined,
+    isPhoneError: undefined,
+    isEmailError: undefined,
   });
 
   const iconSize = `${18 / 16}rem`;

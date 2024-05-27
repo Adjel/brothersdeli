@@ -15,9 +15,11 @@ export default function Contact() {
     message: "",
   });
 
-  const [isError, setIsError] = useState();
-  const [isPhoneError, setPhoneIsError] = useState();
-  const [isEmailError, setEmailIsError] = useState();
+  const [errors, setErrors] = useState({
+    isError: undefined,
+    isPhoneError: undefined,
+    isEmailError: undefined,
+  });
 
   const iconSize = `${18 / 16}rem`;
 
@@ -32,9 +34,11 @@ export default function Contact() {
   function handleOnSubmit(event) {
     event.preventDefault();
     // reset errors
-    setIsError();
-    setPhoneIsError();
-    setEmailIsError();
+    setErrors({
+      isError: false,
+      isPhoneError: false,
+      isEmailError: false,
+    });
     const phoneRegex =
       /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/gm;
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
@@ -45,23 +49,27 @@ export default function Contact() {
       });
     }
     if (input.email === "" || input.subject === "" || input.message === "")
-      return setIsError(true);
-    if (!emailRegex.test(input.email)) return setEmailIsError(true);
-    if (!phoneRegex.test(input.phone)) return setPhoneIsError(true);
+      return setErrors((prevState) => ({ ...prevState, isError: true }));
+    if (!emailRegex.test(input.email))
+      return setErrors((prevState) => ({ ...prevState, isEmailError: true }));
+    if (!phoneRegex.test(input.phone))
+      return setErrors((prevState) => ({ ...prevState, isPhoneError: true }));
     fakeHandleSubmitInProvider();
   }
 
   async function fakeHandleSubmitInProvider() {
-    if (!isError && !isPhoneError) {
-      setIsError(false);
-      setPhoneIsError(false);
-      setEmailIsError(false);
+    if (!errors.isError && !errors.isPhoneError && !errors.isEmailError) {
+      setErrors({
+        isError: false,
+        isPhoneError: false,
+        isEmailError: false,
+      });
     }
   }
 
   function ErrorMEssage() {
     return (
-      isError && (
+      errors.isError && (
         <div className={styles.error}>
           <IoCloseOutline size={iconSize} /> Ce champ est nécéssaire.
         </div>
@@ -71,7 +79,7 @@ export default function Contact() {
 
   function ErrorPhoneMessage() {
     return (
-      isPhoneError && (
+      errors.isPhoneError && (
         <div className={styles.error}>
           <IoCloseOutline size={iconSize} />
           Le champ accepte uniquement les chiffres et les caractères
@@ -82,26 +90,28 @@ export default function Contact() {
   }
 
   function SubmitErrorMessage() {
-    return isError !== undefined ? (
-      <div className={isError ? styles.submitError : styles.submitted}>
-        {isError ? (
-          <>
-            <IoCloseOutline size={iconSize} />
-            Oups ! Une erreur est survenue.
-          </>
-        ) : (
-          <>
-            <IoCheckmark size={iconSize} />
-            Merci pour votre message !
-          </>
-        )}
-      </div>
-    ) : undefined;
+    return (
+      errors.isError !== undefined && (
+        <div className={errors.isError ? styles.submitError : styles.submitted}>
+          {errors.isError ? (
+            <>
+              <IoCloseOutline size={iconSize} />
+              Oups ! Une erreur est survenue.
+            </>
+          ) : (
+            <>
+              <IoCheckmark size={iconSize} />
+              Merci pour votre message !
+            </>
+          )}
+        </div>
+      )
+    );
   }
 
   function ErrorEmailMessage() {
     return (
-      isEmailError && (
+      errors.isEmailError && (
         <div className={styles.error}>
           L'adresse email fournie n'a pas un format valide.
         </div>
