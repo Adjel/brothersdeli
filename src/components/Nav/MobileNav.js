@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import styles from "./nav.module.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function MobileNav({ isNavOpen }) {
   const navRef = useRef();

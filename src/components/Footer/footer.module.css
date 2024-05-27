@@ -51,6 +51,7 @@
     justify-content: center;
     align-items: end;
     gap: var(--gap);
+    padding: 0;
 }
 
 /* use new grid area layout declared in media query */
