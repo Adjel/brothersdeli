@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styles from "../styles/bFranchise.module.css";
+import React, { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoCheckmark } from "react-icons/io5";
+import styles from "../styles/contact.module.css";
 
 export default function BecomeFranchise() {
   const [input, setInput] = useState({

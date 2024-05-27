@@ -1,1 +1,239 @@
+.wrapper, .header, .formWrapper, .actionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.wrapper {
+    max-width: 100%;
+
+    /* variables */
+    --ten-px: calc(10/16*1rem);
+    --five-px: calc(5/16*1rem);
+    --fifteen-px: calc(15/16*1rem);
+    --twenty-px: calc(20/16*1rem);
+    --fourty-px: calc(40/16*1rem);
+    --fifty-px: calc(50/16*1rem);
+    --border-color: rgb(105, 114, 125)
+}
+
+.responsiveWrapper {
+    padding: var(--ten-px);
+}
+
+/* header */
+.header {
+    width: 100%;
+}
+
+.title, .subTitle {
+    text-align: center;
+    font-weight: var(--font-weight-six);
+    color: var(--primary);
+    margin: 0 0 var(--twenty-px) 0;
+}
+
+.title {
+    text-transform: uppercase;
+    font-family: var(--font-thicker);
+    font-size: calc(45/16*1rem);
+}
+
+.subTitle {
+    font-size: var(--font-size-normal);
+    font-family: var(--font-merriweather);
+    padding: var(--fifteen-px) 0;
+}
+/* header */
+
+/* form */
+.formWrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 calc(90/16*1rem) calc(50/16*1rem);
+    box-sizing: border-box;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--ten-px) var(--ten-px);
+    color: var(--primary);
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-normal);
+}
+
+.label {
+    margin-bottom: calc(5/16*1rem);
+}
+
+.inputName, .inputWrapper, .inputsNameWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 calc(-7.5/16*1rem);
+}
+
+.inputsNameWrapper {
+    padding: 0;
+}
+
+.input, .select, .checkboxbWrapper, .textarea {
+    width: 100%;
+    min-height: var(--fourty-px);
+    margin-bottom: var(--twenty-px);
+    border: calc(1/16*1rem) solid rgb(105, 114, 125);
+    border-radius: var(--ten-px);
+}
+
+.input, .select, .textarea {
+    border-radius: var(--ten-px);
+    padding: calc(8/16*1rem) 1rem;
+    margin-bottom: var(--ten-px);
+    box-sizing: border-box;
+
+    color: var(--primary);
+    border-radius: var(--ten-px);
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-normal);
+    font-family: var(--font-merriweather);
+}
+
+/* position used to place the chevron icon in select */
+.inputWrapper {
+    position: relative;
+}
+
+.select {
+    padding: var(--five-px) var(--twenty-px) var(--five-px) calc(14/16*1rem);
+    appearance: none; /* Cache le chevron par défaut */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+}
+
+.selectIcon {
+    position: absolute;
+    width: calc(20/16*1rem);
+    height: auto;
+    right: calc(10/16*1rem);
+    top: calc(32/16*1rem);
+    bottom: 0;
+    pointer-events: none; /* Empêche l'icône d'interférer avec les clics */
+}
+
+.required {
+    color: red;
+}
+
+.checkboxbWrapper {
+    border: none;
+    margin-bottom: var(--fifteen-px);
+}
+
+.option {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    margin-bottom: var(--five-px);
+}
+
+.textarea {
+    min-height: calc(168/16*1rem);
+    padding: calc(8/16*1rem) 1rem;
+}
+
+.submitButtonWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitButton {
+    border: none;
+    min-height: var(--fourty-px);
+    padding: 0 calc(24/16*1rem);
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: var(--fifteen-px);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-six);
+    font-family: var(--font-merriweather);
+    
+}
+/* form */
+
+/* action */
+.actionWrapper {
+    width: 100%;
+    min-height: calc(125/16*1rem);
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.actionButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ten-px);
+    font-size: calc(25/16*1rem);
+    font-family: var(--font-merriweather-sans);
+    font-weight: var(--font-weight-normal);
+    padding: calc(12/16*1rem) calc(24/16*1rem);
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+/* action */
+
+/* error */
+.submitError, .error, .submitted {
+    align-self: start;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: red;
+    margin-bottom: var(--ten-px);
+}
+
+.submitError, .submitted {
+    margin-top: var(--ten-px);
+}
+
+.submitted {
+    color: var(--primary);
+}
+/* error */
+
+
+@media (min-width: 36rem) {
+    .responsiveWrapper {
+        padding: var(--fifty-px);
+    }
+    .form {
+        flex-direction: revert;
+        flex-wrap: wrap;
+    }
+    .inputsNameWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: revert;
+        box-sizing: border-box;
+        gap: var(--fifteen-px);
+    }
+    .inputName {
+        width: 50%;
+        box-sizing: border-box;
+    }
+}   
