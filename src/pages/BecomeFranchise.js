@@ -119,8 +119,8 @@ export default function BecomeFranchise() {
         </header>
         <section className={styles.formWrapper}>
           <form className={styles.form}>
-            <div className={styles.inputsNameWrapper}>
-              <div className={styles.inputName}>
+            <div className={styles.inputRowWrapper}>
+              <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="lastName">
                   Nom
                 </label>
@@ -133,7 +133,7 @@ export default function BecomeFranchise() {
                   onChange={(event) => handleInputChange(event)}
                 ></input>
               </div>
-              <div className={styles.inputName}>
+              <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="firstName">
                   Prénom
                 </label>

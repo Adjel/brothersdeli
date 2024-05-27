@@ -69,14 +69,14 @@
     margin-bottom: calc(5/16*1rem);
 }
 
-.inputName, .inputWrapper, .inputsNameWrapper {
+.inputWrapper, .inputRowWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0 calc(-7.5/16*1rem);
 }
 
-.inputsNameWrapper {
+.inputRowWrapper {
     padding: 0;
 }
 
@@ -225,15 +225,11 @@
         flex-direction: revert;
         flex-wrap: wrap;
     }
-    .inputsNameWrapper {
+    .inputRowWrapper {
         width: 100%;
         display: flex;
         flex-direction: revert;
         box-sizing: border-box;
         gap: var(--fifteen-px);
-    }
-    .inputName {
-        width: 50%;
-        box-sizing: border-box;
     }
 }   

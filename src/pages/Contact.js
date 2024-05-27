@@ -121,8 +121,8 @@ export default function Contact() {
         </header>
         <section className={styles.formWrapper}>
           <form className={styles.form}>
-            <div className={styles.inputsNameWrapper}>
-              <div className={styles.inputName}>
+            <div className={styles.inputRowWrapper}>
+              <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="lastName">
                   Nom <span className={styles.required}>*</span>
                 </label>
@@ -136,7 +136,7 @@ export default function Contact() {
                 ></input>
                 <ErrorMEssage />
               </div>
-              <div className={styles.inputName}>
+              <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="firstName">
                   Prénom <span className={styles.required}>*</span>
                 </label>
@@ -151,68 +151,71 @@ export default function Contact() {
                 <ErrorMEssage />
               </div>
             </div>
-            <div className={styles.inputWrapper}>
-              <label className={styles.label} htmlFor="email">
-                E-mail <span className={styles.required}>*</span>
-              </label>
-              <input
-                className={styles.input}
-                type="email"
-                id="email"
-                name="email"
-                value={input.email}
-                onChange={(event) => handleInputChange(event)}
-              ></input>
-              <ErrorEmailMessage />
-              <ErrorMEssage />
+            <div className={styles.inputRowWrapper}>
+              <div className={styles.inputWrapper}>
+                <label className={styles.label} htmlFor="email">
+                  E-mail <span className={styles.required}>*</span>
+                </label>
+                <input
+                  className={styles.input}
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={input.email}
+                  onChange={(event) => handleInputChange(event)}
+                ></input>
+                <ErrorEmailMessage />
+                <ErrorMEssage />
+              </div>
+              <div className={styles.inputWrapper}>
+                <label className={styles.label} htmlFor="phone">
+                  Téléphone
+                </label>
+                <input
+                  className={styles.input}
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  value={input.phone}
+                  onChange={(event) => handleInputChange(event)}
+                ></input>
+                <ErrorPhoneMessage />
+              </div>
             </div>
-            <div className={styles.inputWrapper}>
-              <label className={styles.label} htmlFor="phone">
-                Téléphone
-              </label>
-              <input
-                className={styles.input}
-                type="number"
-                id="phone"
-                name="phone"
-                value={input.phone}
-                onChange={(event) => handleInputChange(event)}
-              ></input>
-              <ErrorPhoneMessage />
-            </div>
-            <div className={styles.inputWrapper}>
-              <label className={styles.label} htmlFor="city">
-                Restaurant
-              </label>
-              <FaCaretDown className={styles.selectIcon} />
-              <select
-                className={styles.select}
-                id="city"
-                name="city"
-                value={input.city}
-                onChange={(event) => handleInputChange(event)}
-              >
-                <option value="NANTES">NANTES</option>
-              </select>
-            </div>
-            <div className={styles.inputWrapper}>
-              <label className={styles.label} htmlFor="subject">
-                Sujet <span className={styles.required}>*</span>
-              </label>
-              <input
-                className={styles.input}
-                type="text"
-                id="subject"
-                name="subject"
-                value={input.subject}
-                onChange={(event) => handleInputChange(event)}
-              ></input>
-              <ErrorMEssage />
+            <div className={styles.inputRowWrapper}>
+              <div className={styles.inputWrapper}>
+                <label className={styles.label} htmlFor="city">
+                  Restaurant
+                </label>
+                <FaCaretDown className={styles.selectIcon} />
+                <select
+                  className={styles.select}
+                  id="city"
+                  name="city"
+                  value={input.city}
+                  onChange={(event) => handleInputChange(event)}
+                >
+                  <option value="NANTES">NANTES</option>
+                </select>
+              </div>
+              <div className={styles.inputWrapper}>
+                <label className={styles.label} htmlFor="subject">
+                  Sujet <span className={styles.required}>*</span>
+                </label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={input.subject}
+                  onChange={(event) => handleInputChange(event)}
+                ></input>
+                <ErrorMEssage />
+              </div>
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="message">
-                Message
-                <span className={styles.required}>*</span>
+                Message <span className={styles.required}>*</span>
               </label>
               <textarea
                 className={styles.textarea}
