@@ -33,7 +33,7 @@ export default function BecomeFranchise() {
 
   return (
     <section className={styles.wrapper}>
-      <section style={{ padding: `${10 / 16}rem` }}>
+      <section className={styles.responsiveWrapper}>
         <header className={styles.header}>
           <h1 className={styles.title}>devenir franchisé</h1>
           <p className={styles.subTitle}>
@@ -42,28 +42,34 @@ export default function BecomeFranchise() {
         </header>
         <section className={styles.formWrapper}>
           <form className={styles.form}>
-            <label className={styles.label} htmlFor="lastName">
-              Nom
-            </label>
-            <input
-              className={styles.input}
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={input.lastName}
-              onChange={(event) => handleInputChange(event)}
-            ></input>
-            <label className={styles.label} htmlFor="firstName">
-              Prénom
-            </label>
-            <input
-              className={styles.input}
-              type="text"
-              id="firstName"
-              name="firstName"
-              value={input.firstName}
-              onChange={(event) => handleInputChange(event)}
-            ></input>
+            <div className={styles.inputsNameWrapper}>
+              <div className={styles.inputName}>
+                <label className={styles.label} htmlFor="lastName">
+                  Nom
+                </label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={input.lastName}
+                  onChange={(event) => handleInputChange(event)}
+                ></input>
+              </div>
+              <div className={styles.inputName}>
+                <label className={styles.label} htmlFor="firstName">
+                  Prénom
+                </label>
+                <input
+                  className={styles.input}
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={input.firstName}
+                  onChange={(event) => handleInputChange(event)}
+                ></input>
+              </div>
+            </div>
             <label className={styles.label} htmlFor="email">
               E-mail
             </label>
