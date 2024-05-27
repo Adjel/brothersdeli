@@ -31,7 +31,7 @@
     text-align: center;
     font-weight: var(--font-weight-six);
     color: var(--primary);
-    margin: 0 0 var(--twenty-px) 0;
+    margin-bottom: var(--twenty-px);
 }
 
 .title {
@@ -59,43 +59,39 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 var(--ten-px) var(--ten-px);
+    padding: 0 var(--ten-px);
     color: var(--primary);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-normal);
 }
 
 .label {
-    margin-bottom: calc(5/16*1rem);
+    margin-bottom: var(--five-px);
 }
 
-.inputName, .inputWrapper, .inputsNameWrapper {
+.inputWrapper, .inputRowWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 calc(-7.5/16*1rem);
-}
-
-.inputsNameWrapper {
-    padding: 0;
 }
 
 .input, .select, .checkboxbWrapper, .textarea {
     width: 100%;
     min-height: var(--fourty-px);
-    margin-bottom: var(--twenty-px);
     border: calc(1/16*1rem) solid rgb(105, 114, 125);
     border-radius: var(--ten-px);
 }
 
+.checkboxbWrapper {
+    border: none;
+    margin-bottom: var(--fifteen-px);
+}
+
 .input, .select, .textarea {
-    border-radius: var(--ten-px);
     padding: calc(8/16*1rem) 1rem;
     margin-bottom: var(--ten-px);
     box-sizing: border-box;
-
     color: var(--primary);
-    border-radius: var(--ten-px);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-normal);
     font-family: var(--font-merriweather);
@@ -125,11 +121,6 @@
 
 .required {
     color: red;
-}
-
-.checkboxbWrapper {
-    border: none;
-    margin-bottom: var(--fifteen-px);
 }
 
 .option {
@@ -225,15 +216,11 @@
         flex-direction: revert;
         flex-wrap: wrap;
     }
-    .inputsNameWrapper {
+    .inputRowWrapper {
         width: 100%;
         display: flex;
         flex-direction: revert;
         box-sizing: border-box;
         gap: var(--fifteen-px);
-    }
-    .inputName {
-        width: 50%;
-        box-sizing: border-box;
     }
 }   
