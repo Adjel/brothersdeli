@@ -7,8 +7,6 @@
 
 .wrapper {
     max-width: 100%;
-    padding: var(--ten-px) ;
-    border: 2px solid blue;
 
     /* variables */
     --ten-px: calc(10/16*1rem);
@@ -18,9 +16,9 @@
     --fourty-px: calc(40/16*1rem);
 }
 
+/* header */
 .header {
     width: 100%;
-    border: 2px solid orange;
 }
 
 .title, .subTitle {
@@ -40,13 +38,14 @@
     font-family: var(--font-merriweather);
     padding: var(--fifteen-px) 0;
 }
+/* header */
 
+/* form */
 .formWrapper {
     width: 100%;
     max-width: 100%;
     padding: 0 calc(90/16*1rem) calc(50/16*1rem);
     box-sizing: border-box;
-    border: 2px solid green;
 }
 
 .form {
@@ -57,7 +56,6 @@
     color: var(--primary);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-normal);
-    border: 2px solid cyan;
 }
 
 .label {
@@ -116,12 +114,13 @@
     font-family: var(--font-merriweather);
     
 }
+/* form */
 
+/* action */
 .actionWrapper {
     width: 100%;
     min-height: calc(125/16*1rem);
     background-color: var(--secondary);
-    border: 2px solid purple;
 }
 
 .actionButton {
@@ -136,3 +135,4 @@
     border: none;
     background: none;
 }
+/* action */
