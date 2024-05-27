@@ -25,7 +25,7 @@
   align-items: start;
   font-weight: var(--font-weight-nine);
   gap: calc(8/16*1rem);
-  padding: calc(10/16*1rem);
+  padding: calc(10/16*1rem) calc(10/16*1rem) 0;
 }
 .orderingButtonWrapper {
   flex: 1;
@@ -70,7 +70,7 @@
         padding: revert;
     }
     .mobileNavWrapper {
-      padding-bottom: revert;
+      padding: calc(10/16*1rem);
     }
     .orderingButtonWrapper {
       display: flex

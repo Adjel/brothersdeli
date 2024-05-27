@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.navLink {
+.navLink, .navLinkSelected, .navLinkDesktopSelected {
   display: flex;
   text-decoration: none;
   color: var(--primary);
@@ -55,18 +55,18 @@
   }
 }
 
-.liLinkWrapper {
+.navLinkSelected {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.itemLinkWrapper {
   width: 100%;
 }
 
 .navLink > * {
     color: inherit;
 }
-
-    /* tablet and up */
-@media (min-width: 36rem) {
-   
-  }
 
   /* pc and up */
 @media (min-width: 62rem) {
@@ -76,7 +76,7 @@
     .desktopNavWrapper {
       display: flex;
     }
-    .navLink {
+    .navLink, .navLinkDesktopSelected {
       font-size: var(--desktop-button-font-size);
       padding: calc(5/16*1rem) calc(12/16*1rem);
 
@@ -84,6 +84,13 @@
         background-color: revert;
         color: var(--primary-action);
       }
+    }
+    .navLinkSelected {
+      background-color: var(--primary);
+      color: var(--primary-action);
+    }
+    .navLinkDesktopSelected {
+      color: var(--primary-action);
     }
   }
 
