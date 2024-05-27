@@ -125,7 +125,7 @@ export default function BecomeFranchise() {
           </p>
         </header>
         <section className={styles.formWrapper}>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleOnSubmit}>
             <div className={styles.inputRowWrapper}>
               <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="lastName">

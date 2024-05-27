@@ -75,22 +75,23 @@
     flex-direction: column;
 }
 
-.input, .select, .textarea {
+.input, .select, .checkboxbWrapper, .textarea {
     width: 100%;
     min-height: var(--fourty-px);
-    margin-bottom: var(--twenty-px);
     border: calc(1/16*1rem) solid rgb(105, 114, 125);
     border-radius: var(--ten-px);
 }
 
+.checkboxbWrapper {
+    border: none;
+    margin-bottom: var(--fifteen-px);
+}
+
 .input, .select, .textarea {
-    border-radius: var(--ten-px);
     padding: calc(8/16*1rem) 1rem;
     margin-bottom: var(--ten-px);
     box-sizing: border-box;
-
     color: var(--primary);
-    border-radius: var(--ten-px);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-normal);
     font-family: var(--font-merriweather);
@@ -120,11 +121,6 @@
 
 .required {
     color: red;
-}
-
-.checkboxbWrapper {
-    border: none;
-    margin-bottom: var(--fifteen-px);
 }
 
 .option {
