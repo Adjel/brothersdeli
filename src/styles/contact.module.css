@@ -31,7 +31,7 @@
     text-align: center;
     font-weight: var(--font-weight-six);
     color: var(--primary);
-    margin: 0 0 var(--twenty-px) 0;
+    margin-bottom: var(--twenty-px);
 }
 
 .title {
@@ -59,28 +59,23 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 var(--ten-px) var(--ten-px);
+    padding: 0 var(--ten-px);
     color: var(--primary);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-normal);
 }
 
 .label {
-    margin-bottom: calc(5/16*1rem);
+    margin-bottom: var(--five-px);
 }
 
 .inputWrapper, .inputRowWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 calc(-7.5/16*1rem);
 }
 
-.inputRowWrapper {
-    padding: 0;
-}
-
-.input, .select, .checkboxbWrapper, .textarea {
+.input, .select, .textarea {
     width: 100%;
     min-height: var(--fourty-px);
     margin-bottom: var(--twenty-px);
