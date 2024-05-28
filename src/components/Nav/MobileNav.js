@@ -8,10 +8,12 @@ export default function MobileNav({ isNavOpen }) {
   const router = useRouter();
   const currentPath = router.pathname;
 
-  const notreHistoire = "/Brand";
-  const laCarte = "/Menu";
-  const franchise = "/BecomeFranchise";
-  const contact = "/Contact";
+  const path = {
+    notreHistoire: "/Brand",
+    laCarte: "/Menu",
+    franchise: "/BecomeFranchise",
+    contact: "/Contact",
+  };
 
   useEffect(() => {
     if (isNavOpen) {
@@ -30,7 +32,7 @@ export default function MobileNav({ isNavOpen }) {
         <il className={styles.itemLinkWrapper}>
           <Link
             className={
-              currentPath !== notreHistoire
+              currentPath !== path.notreHistoire
                 ? styles.navLink
                 : styles.navLinkSelected
             }
@@ -42,7 +44,9 @@ export default function MobileNav({ isNavOpen }) {
         <il className={styles.itemLinkWrapper}>
           <Link
             className={
-              currentPath !== laCarte ? styles.navLink : styles.navLinkSelected
+              currentPath !== path.laCarte
+                ? styles.navLink
+                : styles.navLinkSelected
             }
             href="la-carte"
           >
@@ -52,7 +56,7 @@ export default function MobileNav({ isNavOpen }) {
         <il className={styles.itemLinkWrapper}>
           <Link
             className={
-              currentPath !== franchise
+              currentPath !== path.franchise
                 ? styles.navLink
                 : styles.navLinkSelected
             }
@@ -64,7 +68,9 @@ export default function MobileNav({ isNavOpen }) {
         <il className={styles.itemLinkWrapper}>
           <Link
             className={
-              currentPath != contact ? styles.navLink : styles.navLinkSelected
+              currentPath != path.contact
+                ? styles.navLink
+                : styles.navLinkSelected
             }
             href="contact"
           >
