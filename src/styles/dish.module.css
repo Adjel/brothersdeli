@@ -14,10 +14,12 @@
 }
 
 .wrapper {
+    width: 100%;
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: var(--ten-px);
+    padding: var(--twenty-px);
+    box-sizing: border-box;
 }
 
 .backButtonWrapper {
@@ -77,6 +79,11 @@
     padding: 0 0 0.9rem 0;
     font-size: var(--font-size-14);
 }
+
+.orderingButtonWrapper {
+    display: flex;
+    justify-content: center;
+}
 /* article */
 
 @media (min-width: 36rem) {
@@ -88,5 +95,8 @@
     }
     .wrapper {
         flex: 2;
+    }
+    .orderingButtonWrapper {
+        justify-content: start;
     }
 }
