@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MobileNav from "../Nav/MobileNav";
 import DesktopNav from "../Nav/DesktopNav";
 import HomeIconButton from "../HomeIconButton";
@@ -7,9 +7,17 @@ import OrderingButton from "../OrderingButton";
 import styles from "./header.module.css";
 import { IoClose } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
+import { useRouter } from "next/router";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const router = useRouter();
+  const currentPath = router.pathname;
+
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [currentPath]);
 
   return (
     <header className={styles.header}>
