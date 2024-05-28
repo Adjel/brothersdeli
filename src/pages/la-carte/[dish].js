@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import OrderingButton from "@/components/OrderingButton";
-import { useEffect } from "react";
 
 export default function MenuDishPage() {
   const router = useRouter();
@@ -59,7 +58,9 @@ export default function MenuDishPage() {
                 )}
               </p>
             </div>
-            <OrderingButton />
+            <div className={styles.orderingButtonWrapper}>
+              <OrderingButton />
+            </div>
           </div>
         </article>
       </section>
