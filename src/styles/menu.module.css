@@ -171,18 +171,20 @@
 /* action */
 
 
-
 @media (min-width: 36rem) {
+    .gridCatWrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: calc(670/16*1rem)) {
     .scrollButtonsWrapper {
         flex-direction: revert;
         min-height: calc(175/16*1rem);
         margin: 0;
     }
-    .gridCatWrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
     .buttonLink {
-        white-space: pre-wrap;
+        white-space: wrap;
     }
     .h2oneLine {
         display: none;
@@ -190,7 +192,9 @@
     .h2twoLines {
         display: revert;
     }
+
 }
+
 @media (min-width: 62rem) {
     .buttonLink {
         white-space: nowrap;
