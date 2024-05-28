@@ -154,11 +154,13 @@ see marqueeContent at the bottom of this file*/
 /* article */
 .article {
     width: 100%;
+    display: flex;
+    justify-content: center;
     background-color: var(--secondary);
 }
 
 .articleWrapper {
-    max-width: calc(1024/16*1rem);
+    max-width: calc(1140/16*1rem);
     padding: calc(50/16*1rem) calc(10/16*1rem);
 }
 
@@ -241,7 +243,7 @@ see marqueeContent at the bottom of this file*/
         height: auto;
     }
     .articleH2 {
-        font-size: clamp(1.75em, 2.5vw, 3.125em);
+        font-size: clamp(1.75em, 5vw, 3.125em);
     }
     .articleP {
         font-size: clamp(0.5em, 2.5vw, 1em);
