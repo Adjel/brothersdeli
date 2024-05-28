@@ -3,6 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { IoCheckmark } from "react-icons/io5";
 import styles from "../styles/contact.module.css";
 import { FaCaretDown } from "react-icons/fa";
+import { phoneRegex, emailRegex } from "@/utils/regex";
 
 export default function Contact() {
   const [input, setInput] = useState({
@@ -17,8 +18,18 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({
     isError: undefined,
-    isPhoneError: undefined,
-    isEmailError: undefined,
+    isFirstNameError: undefined,
+    isLastNameError: undefined,
+    isEmailError: {
+      isEmpty: undefined,
+      isRegexError: undefined,
+    },
+    isPhoneError: {
+      isEmpty: undefined,
+      isRegexError: undefined,
+    },
+    isSubjectError: undefined,
+    isMessageError: undefined,
   });
 
   const iconSize = `${18 / 16}rem`;
@@ -36,33 +47,85 @@ export default function Contact() {
     // reset errors
     setErrors({
       isError: false,
-      isPhoneError: false,
-      isEmailError: false,
+      isFirstNameError: false,
+      isLastNameError: false,
+      isEmailError: {
+        isEmpty: false,
+        isRegexError: false,
+      },
+      isPhoneError: {
+        isEmpty: false,
+        isRegexError: false,
+      },
+      isSubjectError: false,
+      isMessageError: false,
     });
-    const phoneRegex =
-      /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/gm;
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+    // set a default city
     if (input.city === "") {
       setInput({
         ...input,
         city: "NANTES",
       });
     }
-    if (input.email === "" || input.subject === "" || input.message === "")
-      return setErrors((prevState) => ({ ...prevState, isError: true }));
+    if (input.email === "")
+      return setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        isEmailError: {
+          ...errors.isEmailError,
+          isEmpty: true,
+        },
+      }));
+    if (input.subject === "")
+      return setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        isSubjectError: true,
+      }));
+    if (input.message === "")
+      return setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        isMessageError: true,
+      }));
     if (!emailRegex.test(input.email))
-      return setErrors((prevState) => ({ ...prevState, isEmailError: true }));
+      return setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        isEmailError: {
+          ...isEmailError,
+          isRegexError: true,
+        },
+      }));
     if (!phoneRegex.test(input.phone))
-      return setErrors((prevState) => ({ ...prevState, isPhoneError: true }));
+      return setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        isPhoneError: {
+          ...isPhoneError,
+          isRegexError: true,
+        },
+      }));
     fakeHandleSubmitInProvider();
   }
 
   async function fakeHandleSubmitInProvider() {
-    if (!errors.isError && !errors.isPhoneError && !errors.isEmailError) {
+    if (!errors.find((error) => error === true)) {
       setErrors({
         isError: false,
-        isPhoneError: false,
-        isEmailError: false,
+        isFirstNameError: false,
+        isLastNameError: false,
+        isEmailError: {
+          isEmpty: false,
+          isRegexError: false,
+        },
+        isPhoneError: {
+          isEmpty: false,
+          isRegexError: false,
+        },
+        isSubjectError: false,
+        isMessageError: false,
       });
     }
   }
@@ -77,9 +140,29 @@ export default function Contact() {
     );
   }
 
+  function SubmitErrorMessage() {
+    return errors.isError !== undefined && !errors.isError ? (
+      <div className={errors.isError ? styles.submitError : styles.submitted}>
+        {errors.isError ? (
+          <>
+            <IoCloseOutline size={iconSize} />
+            Oups ! Une erreur est survenue.
+          </>
+        ) : (
+          <>
+            <IoCheckmark size={iconSize} />
+            Merci pour votre message !
+          </>
+        )}
+      </div>
+    ) : undefined;
+  }
+
   function ErrorPhoneMessage() {
-    return (
-      errors.isPhoneError && (
+    return errors.isPhoneError.isEmpty ? (
+      <ErrorMEssage />
+    ) : (
+      errors.isPhoneError.isRegexError && (
         <div className={styles.error}>
           <IoCloseOutline size={iconSize} />
           Le champ accepte uniquement les chiffres et les caractères
@@ -89,29 +172,11 @@ export default function Contact() {
     );
   }
 
-  function SubmitErrorMessage() {
-    return (
-      errors.isError !== undefined && (
-        <div className={errors.isError ? styles.submitError : styles.submitted}>
-          {errors.isError ? (
-            <>
-              <IoCloseOutline size={iconSize} />
-              Oups ! Une erreur est survenue.
-            </>
-          ) : (
-            <>
-              <IoCheckmark size={iconSize} />
-              Merci pour votre message !
-            </>
-          )}
-        </div>
-      )
-    );
-  }
-
   function ErrorEmailMessage() {
-    return (
-      errors.isEmailError && (
+    return errors.isEmailError.isEmpty ? (
+      <ErrorMEssage />
+    ) : (
+      errors.isEmailError.isRegexError && (
         <div className={styles.error}>
           L'adresse email fournie n'a pas un format valide.
         </div>
@@ -175,7 +240,6 @@ export default function Contact() {
                   onChange={(event) => handleInputChange(event)}
                 ></input>
                 <ErrorEmailMessage />
-                <ErrorMEssage />
               </div>
               <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="phone">
