@@ -1,9 +1,5 @@
 .footer {
-    --padding: calc(10/16*1rem);
-    --gap: calc(26/16*1rem);
-}
 
-.footer {
     display: grid;
     max-width: 100%;
     background-color: var(--primary);
@@ -15,6 +11,10 @@
     "about"
     "legals";
     overflow-x: auto;
+
+    /* variables  */
+    --padding: calc(10/16*1rem);
+    --gap: calc(26/16*1rem);
 }
 
 .footer * {
@@ -33,17 +33,18 @@
     grid-area: socials;
 }
 
-.about {
-    grid-area: about;
+.about, .legals {
     font-size: var(--small-button-font-size);
     font-weight: var(--font-size-normal);
+}
+.about {
+    grid-area: about;
 }
 
 .legals {
     grid-area: legals;
-    font-size: var(--small-button-font-size);
-    font-weight: var(--font-size-normal);
 }
+
 .mobileUl {
     width: 100%;
     height: 100%;

@@ -7,13 +7,12 @@ import OrderingButton from "../OrderingButton";
 import styles from "./header.module.css";
 import { IoClose } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const router = useRouter();
-  const currentPath = router.pathname;
+  const currentPath = usePathname();
 
   useEffect(() => {
     setIsNavOpen(false);
