@@ -1,0 +1,29 @@
+/* HEADER */
+
+/* dish category */
+
+.dishCatHeader {
+    padding: var(--padding-ten) 0;   
+}
+
+.title, .p {
+    color: var(--secondary);
+    text-align: center;
+    margin: 0;
+    font-weight: var(--font-weight-normal);
+}
+
+.title {
+    font-family: var(--font-thicker);
+    font-size: calc(40/16*1em);
+    margin-bottom: calc(20/16*1rem);
+    text-transform: uppercase;
+}
+
+.p {
+    font-family: var(--font-merriweather);
+    font-size: var(--font-size-normal);
+    margin-bottom: 0.9rem;  
+}
+
+/* HEADER */
