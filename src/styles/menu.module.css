@@ -41,19 +41,6 @@
     margin: calc(30/16*1rem) 0; 
 }
 
-.scrollButton {
-    flex: 1;
-    width: 100%;
-    border: none;
-    background: none;
-    padding: var(--padding-inline-ten);
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-        transform: scale(1.1); 
-    } 
-}
-
 .h2 {
     flex: 1;
     margin: 0;
@@ -62,34 +49,7 @@
     transform: rotate(-5deg); 
 }
 
-/* create the one/two lines effect for side */
-.h2oneLine {
-    flex: 1;
-    margin: 0;
-    background-color: var(--secondary);
-    padding: var(--padding-inline-ten);
-    transform: rotate(-5deg); 
-}
 
-.h2twoLines {
-    display: none;
-    flex: 1;
-    margin: 0;
-    background-color: var(--secondary);
-    padding: var(--padding-inline-ten);
-    transform: rotate(-5deg);   
-}
-/* create the one/two lines effect for side */
-
-.buttonLink {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: var(--primary);
-    font-size: calc(31/16*1em);
-    font-family: var(--font-merriweather-sans);
-    white-space: nowrap;  
-}
 /* HEADER */
 
 /* dish category */
