@@ -7,10 +7,8 @@ import {
 } from "@/components/HandlingErrors/handleErrors";
 import { emailRegex, phoneRegex } from "@/utils/regex";
 import {
-  ErrorMEssage,
-  ErrorEmailMessage,
+  ErrorMessage,
   SubmitMessage,
-  ErrorPhoneMessage,
 } from "@/components/HandlingErrors/displayErrors";
 
 export default function BecomeFranchise() {
@@ -134,7 +132,7 @@ export default function BecomeFranchise() {
                 value={input.email}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorMEssage error={errors.email} type="email" />
+              <ErrorMessage error={errors.email} type="email" />
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="city">
@@ -148,7 +146,7 @@ export default function BecomeFranchise() {
                 value={input.city}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorMEssage error={errors.city} type="generic" />
+              <ErrorMessage error={errors.city} type="generic" />
             </div>
             <div className={styles.checkboxbWrapper}>
               <p className={styles.option}>Avez-vous déjà un local ?</p>
@@ -187,7 +185,7 @@ export default function BecomeFranchise() {
                 value={input.phone}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorMEssage error={errors.phone} type="phone" />
+              <ErrorMessage error={errors.phone} type="phone" />
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="project">
@@ -202,7 +200,7 @@ export default function BecomeFranchise() {
                 value={input.project}
                 onChange={(event) => handleInputChange(event)}
               ></textarea>
-              <ErrorMEssage error={errors.project} type="generic" />
+              <ErrorMessage error={errors.project} type="generic" />
             </div>
             <div className={styles.submitButtonWrapper}>
               <button

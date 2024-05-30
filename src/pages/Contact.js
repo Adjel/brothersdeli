@@ -8,7 +8,7 @@ import {
   handleError,
 } from "@/components/HandlingErrors/handleErrors";
 import {
-  ErrorMEssage,
+  ErrorMessage,
   SubmitMessage,
 } from "@/components/HandlingErrors/displayErrors";
 
@@ -114,7 +114,7 @@ export default function Contact() {
                   value={input.lastName}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage error={errors.lastName} type="generic" />
+                <ErrorMessage error={errors.lastName} type="generic" />
               </div>
               <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="firstName">
@@ -128,7 +128,7 @@ export default function Contact() {
                   value={input.firstName}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage error={errors.firstName} type="generic" />
+                <ErrorMessage error={errors.firstName} type="generic" />
               </div>
             </div>
             <div className={styles.inputRowWrapper}>
@@ -144,7 +144,7 @@ export default function Contact() {
                   value={input.email}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage error={errors.email} type="email" />
+                <ErrorMessage error={errors.email} type="email" />
               </div>
               <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="phone">
@@ -188,7 +188,7 @@ export default function Contact() {
                   value={input.subject}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage error={errors.subject} type="generic" />
+                <ErrorMessage error={errors.subject} type="generic" />
               </div>
             </div>
             <div className={styles.inputWrapper}>
@@ -203,7 +203,7 @@ export default function Contact() {
                 value={input.message}
                 onChange={(event) => handleInputChange(event)}
               ></textarea>
-              <ErrorMEssage error={errors.message} type="generic" />
+              <ErrorMessage error={errors.message} type="generic" />
             </div>
             <div className={styles.submitButtonWrapper}>
               <button

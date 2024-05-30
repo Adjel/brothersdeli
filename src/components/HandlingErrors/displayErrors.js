@@ -7,7 +7,10 @@ const iconSize = `${18 / 16}rem`;
 export function ErrorMessage({ error, type }) {
   let message = "";
 
-  if (type === "general" && error === true) {
+  if (
+    (type === "generic" || type !== "phone" || type !== "email") &&
+    error === true
+  ) {
     message = "Ce champ est nécessaire.";
   } else if (type === "phone") {
     if (error.isEmpty) {
@@ -28,7 +31,7 @@ export function ErrorMessage({ error, type }) {
     <div className={styles.error}>
       <IoCloseOutline size={iconSize} /> {message}
     </div>
-  ) : null;
+  ) : undefined;
 }
 
 export function SubmitMessage({ isError }) {
