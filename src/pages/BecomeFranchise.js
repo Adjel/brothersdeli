@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { IoCloseOutline } from "react-icons/io5";
-import { IoCheckmark } from "react-icons/io5";
 import styles from "../styles/contact.module.css";
+import {
+  handleError,
+  resetErrors,
+} from "@/components/HandlingErrors/handleErrors";
+import { emailRegex, phoneRegex } from "@/utils/regex";
+import {
+  ErrorMEssage,
+  ErrorEmailMessage,
+  SubmitMessage,
+  ErrorPhoneMessage,
+} from "@/components/HandlingErrors/displayErrors";
 
 export default function BecomeFranchise() {
   const [input, setInput] = useState({
@@ -17,102 +26,61 @@ export default function BecomeFranchise() {
 
   const [errors, setErrors] = useState({
     isError: undefined,
-    isPhoneError: undefined,
-    isEmailError: undefined,
+    firstName: undefined,
+    lastName: undefined,
+    email: {
+      isEmpty: undefined,
+      isRegexError: undefined,
+    },
+    phone: {
+      isEmpty: undefined,
+      isRegexError: undefined,
+    },
+    subject: undefined,
+    message: undefined,
   });
-
-  const iconSize = `${18 / 16}rem`;
 
   function handleInputChange(event) {
     const { name, value } = event.target;
     setInput((prevState) => ({ ...prevState, [name]: value }));
   }
 
+  // place regex before empty tests because regex will also be true if
+  // input is empty, but we want to show empty
   function handleOnSubmit(event) {
     event.preventDefault();
     // reset errors
-    setErrors({
-      isError: false,
-      isPhoneError: false,
-      isEmailError: false,
-    });
-    const phoneRegex =
-      /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/gm;
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    if (
-      input.email === "" ||
-      input.city === "" ||
-      input.phone === "" ||
-      input.project === ""
-    )
-      return setErrors((prevState) => ({ ...prevState, isError: true }));
+    resetErrors(setErrors);
+
+    if (input.city.trim("") === "") handleError(setErrors, "city");
+    if (input.project.trim("") === "") handleError(setErrors, "project");
+
     if (!emailRegex.test(input.email))
-      return setErrors((prevState) => ({ ...prevState, isEmailError: true }));
+      handleError(setErrors, "email", "isRegexError");
+
+    if (input.email.trim("") === "") handleError(setErrors, "email", "isEmpty");
+
     if (!phoneRegex.test(input.phone))
-      return setErrors((prevState) => ({ ...prevState, isPhoneError: true }));
-    fakeHandleSubmitInProvider();
+      handleError(setErrors, "phone", "isRegexError");
+
+    if (input.phone === "") handleError(setErrors, "phone", "isEmpty");
+
+    if (!errors.isError) fakeHandleSubmitInProvider();
   }
 
   async function fakeHandleSubmitInProvider() {
-    if (!errors.isError && !errors.isPhoneError && !errors.isEmailError) {
-      setErrors({
-        isError: false,
-        isPhoneError: false,
-        isEmailError: false,
+    if (errors.isError === false) {
+      resetErrors(setErrors);
+      setInput({
+        lastName: "",
+        firstName: "",
+        email: "",
+        city: "",
+        local: false,
+        phone: "",
+        project: "",
       });
     }
-  }
-
-  function ErrorMEssage() {
-    return (
-      errors.isError && (
-        <div className={styles.error}>
-          <IoCloseOutline size={iconSize} /> Ce champ est nécéssaire.
-        </div>
-      )
-    );
-  }
-
-  function ErrorPhoneMessage() {
-    return (
-      errors.isPhoneError && (
-        <div className={styles.error}>
-          <IoCloseOutline size={iconSize} />
-          Le champ accepte uniquement les chiffres et les caractères
-          téléphoniques (#, -, *, etc.).
-        </div>
-      )
-    );
-  }
-
-  function SubmitErrorMessage() {
-    return (
-      errors.isError !== undefined && (
-        <div className={errors.isError ? styles.submitError : styles.submitted}>
-          {errors.isError ? (
-            <>
-              <IoCloseOutline size={iconSize} />
-              Oups ! Une erreur est survenue.
-            </>
-          ) : (
-            <>
-              <IoCheckmark size={iconSize} />
-              Merci pour votre message !
-            </>
-          )}
-        </div>
-      )
-    );
-  }
-
-  function ErrorEmailMessage() {
-    return (
-      errors.isEmailError && (
-        <div className={styles.error}>
-          L'adresse email fournie n'a pas un format valide.
-        </div>
-      )
-    );
   }
 
   return (
@@ -166,8 +134,7 @@ export default function BecomeFranchise() {
                 value={input.email}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorEmailMessage />
-              <ErrorMEssage />
+              <ErrorEmailMessage error={errors.email} />
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="city">
@@ -181,7 +148,7 @@ export default function BecomeFranchise() {
                 value={input.city}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorMEssage />
+              <ErrorMEssage error={errors.city} />
             </div>
             <div className={styles.checkboxbWrapper}>
               <p className={styles.option}>Avez-vous déjà un local ?</p>
@@ -220,8 +187,7 @@ export default function BecomeFranchise() {
                 value={input.phone}
                 onChange={(event) => handleInputChange(event)}
               ></input>
-              <ErrorPhoneMessage />
-              <ErrorMEssage />
+              <ErrorPhoneMessage error={errors.phone} />
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="project">
@@ -236,7 +202,7 @@ export default function BecomeFranchise() {
                 value={input.project}
                 onChange={(event) => handleInputChange(event)}
               ></textarea>
-              <ErrorMEssage />
+              <ErrorMEssage error={errors.project} />
             </div>
             <div className={styles.submitButtonWrapper}>
               <button
@@ -246,7 +212,7 @@ export default function BecomeFranchise() {
               >
                 Envoyer
               </button>
-              <SubmitErrorMessage />
+              <SubmitMessage isError={errors.isError} />
             </div>
           </form>
         </section>
