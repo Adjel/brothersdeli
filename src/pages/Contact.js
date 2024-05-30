@@ -1,14 +1,15 @@
+"use client";
 import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoCheckmark } from "react-icons/io5";
 import styles from "../styles/contact.module.css";
 import { FaCaretDown } from "react-icons/fa";
-import { phoneRegex, emailRegex } from "@/utils/regex";
+import { emailRegex } from "@/utils/regex";
 
 export default function Contact() {
   const [input, setInput] = useState({
-    lastName: "",
     firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     city: "",
@@ -18,18 +19,14 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({
     isError: undefined,
-    isFirstNameError: undefined,
-    isLastNameError: undefined,
-    isEmailError: {
+    firstName: undefined,
+    lastName: undefined,
+    email: {
       isEmpty: undefined,
       isRegexError: undefined,
     },
-    isPhoneError: {
-      isEmpty: undefined,
-      isRegexError: undefined,
-    },
-    isSubjectError: undefined,
-    isMessageError: undefined,
+    subject: undefined,
+    message: undefined,
   });
 
   const iconSize = `${18 / 16}rem`;
@@ -42,24 +39,33 @@ export default function Contact() {
     });
   }
 
-  function handleOnSubmit(event) {
-    event.preventDefault();
-    // reset errors
+  function resetErrors() {
     setErrors({
       isError: false,
-      isFirstNameError: false,
-      isLastNameError: false,
-      isEmailError: {
+      firstName: false,
+      lastName: false,
+      email: {
         isEmpty: false,
         isRegexError: false,
       },
-      isPhoneError: {
-        isEmpty: false,
-        isRegexError: false,
-      },
-      isSubjectError: false,
-      isMessageError: false,
+      subject: false,
+      message: false,
     });
+  }
+
+  function handleError({ errorKey }) {
+    setErrors((prevState) => ({
+      ...prevState,
+      isError: true,
+      [errorKey]: true,
+    }));
+  }
+
+  function handleOnSubmit(event) {
+    console.log("handleOnSubmit");
+    event.preventDefault();
+    // reset errors
+    resetErrors();
 
     // set a default city
     if (input.city === "") {
@@ -68,71 +74,64 @@ export default function Contact() {
         city: "NANTES",
       });
     }
-    if (input.email === "")
-      return setErrors((prevState) => ({
+    if (input.firstName === "") {
+      setErrors((prevState) => ({
         ...prevState,
         isError: true,
-        isEmailError: {
-          ...errors.isEmailError,
+        firstName: true,
+      }));
+    }
+    if (input.lastName === "") {
+      setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        lastName: true,
+      }));
+    }
+    if (!emailRegex.test(input.email))
+      setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        email: {
+          isEmpty: false,
+          isRegexError: true,
+        },
+      }));
+    if (input.email === "")
+      setErrors((prevState) => ({
+        ...prevState,
+        isError: true,
+        email: {
+          // if email is empty, regex can't be true
           isEmpty: true,
+          isRegexError: false,
         },
       }));
     if (input.subject === "")
-      return setErrors((prevState) => ({
+      setErrors((prevState) => ({
         ...prevState,
         isError: true,
-        isSubjectError: true,
+        subject: true,
       }));
     if (input.message === "")
-      return setErrors((prevState) => ({
+      setErrors((prevState) => ({
         ...prevState,
         isError: true,
-        isMessageError: true,
+        message: true,
       }));
-    if (!emailRegex.test(input.email))
-      return setErrors((prevState) => ({
-        ...prevState,
-        isError: true,
-        isEmailError: {
-          ...isEmailError,
-          isRegexError: true,
-        },
-      }));
-    if (!phoneRegex.test(input.phone))
-      return setErrors((prevState) => ({
-        ...prevState,
-        isError: true,
-        isPhoneError: {
-          ...isPhoneError,
-          isRegexError: true,
-        },
-      }));
-    fakeHandleSubmitInProvider();
+
+    if (!errors.isError) fakeHandleSubmitInProvider();
   }
 
   async function fakeHandleSubmitInProvider() {
-    if (!errors.find((error) => error === true)) {
-      setErrors({
-        isError: false,
-        isFirstNameError: false,
-        isLastNameError: false,
-        isEmailError: {
-          isEmpty: false,
-          isRegexError: false,
-        },
-        isPhoneError: {
-          isEmpty: false,
-          isRegexError: false,
-        },
-        isSubjectError: false,
-        isMessageError: false,
-      });
+    if (errors.isError === false) {
+      resetErrors();
     }
   }
 
-  function ErrorMEssage() {
+  function ErrorMEssage({ inputId }) {
     return (
-      errors.isError && (
+      errors[inputId] && (
         <div className={styles.error}>
           <IoCloseOutline size={iconSize} /> Ce champ est nécéssaire.
         </div>
@@ -140,28 +139,34 @@ export default function Contact() {
     );
   }
 
-  function SubmitErrorMessage() {
-    return errors.isError !== undefined && !errors.isError ? (
-      <div className={errors.isError ? styles.submitError : styles.submitted}>
-        {errors.isError ? (
-          <>
-            <IoCloseOutline size={iconSize} />
-            Oups ! Une erreur est survenue.
-          </>
-        ) : (
-          <>
-            <IoCheckmark size={iconSize} />
-            Merci pour votre message !
-          </>
-        )}
-      </div>
-    ) : undefined;
+  function SubmitMessage() {
+    let className;
+    let message;
+    console.log(errors);
+    if (errors.isError === undefined) {
+      return;
+    } else if (errors.isError === true) {
+      className = styles.submitError;
+      message = (
+        <>
+          <IoCloseOutline size={iconSize} />
+          Oups ! Une erreur est survenue.
+        </>
+      );
+    } else {
+      className = styles.submitted;
+      message = (
+        <>
+          <IoCheckmark size={iconSize} />
+          Merci pour votre message !
+        </>
+      );
+    }
+    return <div className={className}>{message}</div>;
   }
 
   function ErrorPhoneMessage() {
-    return errors.isPhoneError.isEmpty ? (
-      <ErrorMEssage />
-    ) : (
+    return (
       errors.isPhoneError.isRegexError && (
         <div className={styles.error}>
           <IoCloseOutline size={iconSize} />
@@ -173,10 +178,10 @@ export default function Contact() {
   }
 
   function ErrorEmailMessage() {
-    return errors.isEmailError.isEmpty ? (
-      <ErrorMEssage />
+    return errors.email.isEmpty ? (
+      <ErrorMEssage inputId="email" />
     ) : (
-      errors.isEmailError.isRegexError && (
+      errors.email.isRegexError && (
         <div className={styles.error}>
           L'adresse email fournie n'a pas un format valide.
         </div>
@@ -209,7 +214,7 @@ export default function Contact() {
                   value={input.lastName}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage />
+                <ErrorMEssage inputId="lastName" />
               </div>
               <div className={styles.inputWrapper}>
                 <label className={styles.label} htmlFor="firstName">
@@ -223,7 +228,7 @@ export default function Contact() {
                   value={input.firstName}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage />
+                <ErrorMEssage inputId="firstName" />
               </div>
             </div>
             <div className={styles.inputRowWrapper}>
@@ -253,7 +258,6 @@ export default function Contact() {
                   value={input.phone}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorPhoneMessage />
               </div>
             </div>
             <div className={styles.inputRowWrapper}>
@@ -284,7 +288,7 @@ export default function Contact() {
                   value={input.subject}
                   onChange={(event) => handleInputChange(event)}
                 ></input>
-                <ErrorMEssage />
+                <ErrorMEssage inputId="subject" />
               </div>
             </div>
             <div className={styles.inputWrapper}>
@@ -299,7 +303,7 @@ export default function Contact() {
                 value={input.message}
                 onChange={(event) => handleInputChange(event)}
               ></textarea>
-              <ErrorMEssage />
+              <ErrorMEssage inputId="message" />
             </div>
             <div className={styles.submitButtonWrapper}>
               <button
@@ -309,7 +313,7 @@ export default function Contact() {
               >
                 Envoyer
               </button>
-              <SubmitErrorMessage />
+              <SubmitMessage />
             </div>
           </form>
         </section>
