@@ -20,6 +20,17 @@
     padding-top: calc(25/16*1rem); 
 }
 
+.title {
+    color: var(--secondary);
+    text-align: center;
+    margin: 0;
+    font-weight: var(--font-weight-normal);
+    font-family: var(--font-thicker);
+    font-size: calc(40/16*1em);
+    margin-bottom: calc(20/16*1rem);
+    text-transform: uppercase;
+}
+
 .h1, .h2, .buttonLink {
     font-weight: var(--font-weight-normal);
     text-transform: uppercase; 
@@ -41,115 +52,12 @@
     margin: calc(30/16*1rem) 0; 
 }
 
-.scrollButton {
-    flex: 1;
-    width: 100%;
-    border: none;
-    background: none;
-    padding: var(--padding-inline-ten);
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-        transform: scale(1.1); 
-    } 
-}
-
 .h2 {
     flex: 1;
     margin: 0;
     background-color: var(--secondary);
     padding: var(--padding-inline-ten);
     transform: rotate(-5deg); 
-}
-
-/* create the one/two lines effect for side */
-.h2oneLine {
-    flex: 1;
-    margin: 0;
-    background-color: var(--secondary);
-    padding: var(--padding-inline-ten);
-    transform: rotate(-5deg); 
-}
-
-.h2twoLines {
-    display: none;
-    flex: 1;
-    margin: 0;
-    background-color: var(--secondary);
-    padding: var(--padding-inline-ten);
-    transform: rotate(-5deg);   
-}
-/* create the one/two lines effect for side */
-
-.buttonLink {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: var(--primary);
-    font-size: calc(31/16*1em);
-    font-family: var(--font-merriweather-sans);
-    white-space: nowrap;  
-}
-/* HEADER */
-
-/* dish category */
-.dishCatHeader {
-    padding: var(--padding-ten) 0;   
-}
-
-.title, .p, .itemName {
-    color: var(--secondary);
-    text-align: center;
-    margin: 0;
-    font-weight: var(--font-weight-normal);
-}
-
-.title {
-    font-family: var(--font-thicker);
-    font-size: calc(40/16*1em);
-    margin-bottom: calc(20/16*1rem);
-    text-transform: uppercase;
-}
-
-.p {
-    font-family: var(--font-merriweather);
-    font-size: var(--font-size-normal);
-    margin-bottom: 0.9rem;  
-}
-
-.gridCatWrapper {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1;
-    gap: calc(10/16*1rem);
-    row-gap: calc(30/16*1rem);
-    padding-bottom: calc(100/16*1rem);
-}
-
-.gridItem {
-    display: flex;
-    max-width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: var(--padding-ten);
-    text-decoration: none;   
-}
-
-.imageItemWrapper {
-    display: flex;
-    width: 80%;
-    padding: var(--padding-ten);
-    margin-bottom: calc(20/16*1rem);
-}
-
-.imageItem {
-    border: 0.0625rem solid var(--secondary);
-}
-
-.itemName {
-    font-size: var(--font-size-label);
-    font-family: var(--font-merriweather-sans);
 }
 /* dish category */
 
@@ -170,39 +78,10 @@
 }
 /* action */
 
-
-@media (min-width: 36rem) {
-    .gridCatWrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (min-width: calc(670/16*1rem)) {
     .scrollButtonsWrapper {
         flex-direction: revert;
         min-height: calc(175/16*1rem);
         margin: 0;
-    }
-    .buttonLink {
-        white-space: wrap;
-    }
-    .h2oneLine {
-        display: none;
-    }
-    .h2twoLines {
-        display: revert;
-    }
-
-}
-
-@media (min-width: 62rem) {
-    .buttonLink {
-        white-space: nowrap;
-    }
-    .h2oneLine {
-        display: revert;
-    }
-    .h2twoLines {
-        display: none;
-    }
+    } 
 }
