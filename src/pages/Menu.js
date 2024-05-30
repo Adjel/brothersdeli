@@ -5,6 +5,8 @@ import styles from "../styles/menu.module.css";
 import OrderingButton from "@/components/OrderingButton";
 import Image from "next/image";
 import { dishes, sides, desserts } from "@/data/data";
+import ScrollButton from "@/components/ScrollButton";
+import { ResponsiveScrollButton } from "@/components/ScrollButton";
 
 export default function Menu() {
   return (
@@ -12,33 +14,9 @@ export default function Menu() {
       <header className={styles.header}>
         <h1 className={styles.title}>La carte</h1>
         <div className={styles.scrollButtonsWrapper}>
-          <button className={styles.scrollButton}>
-            <h2 className={styles.h2}>
-              <Link href={"#sandwichs"} className={styles.buttonLink}>
-                nos sandwichs
-              </Link>
-            </h2>
-          </button>
-          <button className={styles.scrollButton}>
-            <h2 className={styles.h2oneLine}>
-              <Link href={"#sides"} className={styles.buttonLink}>
-                nos sides
-              </Link>
-            </h2>
-            <h2 className={styles.h2twoLines}>
-              <Link href={"#sides"} className={styles.buttonLink}>
-                <span>nos</span>
-                <span>sides</span>
-              </Link>
-            </h2>
-          </button>
-          <button className={styles.scrollButton}>
-            <h2 className={styles.h2}>
-              <Link href={"#desserts"} className={styles.buttonLink}>
-                nos desserts
-              </Link>
-            </h2>
-          </button>
+          <ScrollButton href="#sandwichs" content="nos sandwichs" />
+          <ResponsiveScrollButton href="#sides" content="nos sides" />
+          <ScrollButton href="#desserts" content="nos desserts" />
         </div>
       </header>
       <section className={styles.dishCatWrapper}>
