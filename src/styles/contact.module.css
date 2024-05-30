@@ -188,26 +188,6 @@
 }
 /* action */
 
-/* error */
-.submitError, .error, .submitted {
-    align-self: start;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    color: red;
-    margin-bottom: var(--ten-px);
-}
-
-.submitError, .submitted {
-    margin-top: var(--ten-px);
-}
-
-.submitted {
-    color: var(--primary);
-}
-/* error */
-
-
 @media (min-width: 36rem) {
     .responsiveWrapper {
         padding: var(--fifty-px);
