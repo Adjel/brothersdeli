@@ -4,40 +4,31 @@ import { IoCheckmark } from "react-icons/io5";
 
 const iconSize = `${18 / 16}rem`;
 
-export function ErrorMEssage({ error }) {
-  return (
-    error === true && (
-      <div className={styles.error}>
-        <IoCloseOutline size={iconSize} /> Ce champ est nécéssaire.
-      </div>
-    )
-  );
-}
+export function ErrorMessage({ error, type }) {
+  let message = "";
 
-export function ErrorPhoneMessage({ error }) {
-  return error.isEmpty ? (
-    <ErrorMEssage error={error.isEmpty} />
-  ) : (
-    error.isRegexError && (
-      <div className={styles.error}>
-        <IoCloseOutline size={iconSize} />
-        Le champ accepte uniquement les chiffres et les caractères téléphoniques
-        (#, -, *, etc.).
-      </div>
-    )
-  );
-}
+  if (type === "general" && error === true) {
+    message = "Ce champ est nécessaire.";
+  } else if (type === "phone") {
+    if (error.isEmpty) {
+      message = "Ce champ est nécessaire.";
+    } else if (error.isRegexError) {
+      message =
+        "Le champ accepte uniquement les chiffres et les caractères téléphoniques (#, -, *, etc.).";
+    }
+  } else if (type === "email") {
+    if (error.isEmpty) {
+      message = "Ce champ est nécessaire.";
+    } else if (error.isRegexError) {
+      message = "L'adresse email fournie n'a pas un format valide.";
+    }
+  }
 
-export function ErrorEmailMessage({ error }) {
-  return error.isEmpty ? (
-    <ErrorMEssage error={error.isEmpty} />
-  ) : (
-    error.isRegexError && (
-      <div className={styles.error}>
-        L'adresse email fournie n'a pas un format valide.
-      </div>
-    )
-  );
+  return message ? (
+    <div className={styles.error}>
+      <IoCloseOutline size={iconSize} /> {message}
+    </div>
+  ) : null;
 }
 
 export function SubmitMessage({ isError }) {
