@@ -13,12 +13,20 @@ function Footer() {
       <section className={styles.socials}>
         <ul className={styles.mobileUl}>
           <il>
-            <Link className={styles.link} href={""}>
+            <Link
+              className={styles.link}
+              target="_blank"
+              href={"https://www.facebook.com/brothersdeliph/"}
+            >
               <FaFacebookF />
             </Link>
           </il>
           <il>
-            <Link className={styles.link} href={""}>
+            <Link
+              className={styles.link}
+              target="_blank"
+              href={"https://www.instagram.com/brothers.deli/"}
+            >
               <GrInstagram />
             </Link>
           </il>
@@ -36,12 +44,12 @@ function Footer() {
         <ul className={styles.ul}>
           <h2 className={styles.h2}>A propos</h2>
           <il className={styles.il}>
-            <Link className={styles.link} href="Notre-histoire">
+            <Link className={styles.link} href="notre-histoire">
               Notre histoire
             </Link>
           </il>
           <il className={styles.il}>
-            <Link className={styles.link} href="Notre-carte">
+            <Link className={styles.link} href="la-carte">
               Notre carte
             </Link>
           </il>
@@ -72,12 +80,20 @@ function Footer() {
           <h2 className={styles.h2}>Rejoignez-nous sur les réseaux</h2>
           <div className={styles.tabletSocialsWrapper}>
             <il className={styles.il}>
-              <Link className={styles.link} href="">
+              <Link
+                className={styles.link}
+                target="_blank"
+                href="https://www.instagram.com/brothers.deli/"
+              >
                 <GrInstagram size={`${30 / 16}rem`} />
               </Link>
             </il>
             <il className={styles.il}>
-              <Link className={styles.link} href="">
+              <Link
+                className={styles.link}
+                target="_blank"
+                href="https://www.tiktok.com/@brothers.deli"
+              >
                 <FaTiktok size={`${30 / 16}rem`} />
               </Link>
             </il>
