@@ -15,6 +15,7 @@ function Footer() {
           <il>
             <Link
               className={styles.link}
+              target="_blank"
               href={"https://www.facebook.com/brothersdeliph/"}
             >
               <FaFacebookF />
@@ -23,6 +24,7 @@ function Footer() {
           <il>
             <Link
               className={styles.link}
+              target="_blank"
               href={"https://www.instagram.com/brothers.deli/"}
             >
               <GrInstagram />
@@ -80,6 +82,7 @@ function Footer() {
             <il className={styles.il}>
               <Link
                 className={styles.link}
+                target="_blank"
                 href="https://www.instagram.com/brothers.deli/"
               >
                 <GrInstagram size={`${30 / 16}rem`} />
@@ -88,6 +91,7 @@ function Footer() {
             <il className={styles.il}>
               <Link
                 className={styles.link}
+                target="_blank"
                 href="https://www.tiktok.com/@brothers.deli"
               >
                 <FaTiktok size={`${30 / 16}rem`} />
