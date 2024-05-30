@@ -13,12 +13,14 @@ export default function Brand() {
     <section className={styles.section}>
       <header className={styles.header}>
         <Image
+          alt="une photo de deux mains tenant un sandwich"
           className={styles.headerImage}
           src={LHImage}
           layout="responsive"
         />
         <h1 className={styles.h1}>voici notre histoire !</h1>
         <Image
+          alt="une photo de deux mains tenant un autre sandwich"
           className={styles.headerImage}
           src={RHImage}
           layout="responsive"
@@ -56,6 +58,7 @@ export default function Brand() {
           <section className={styles.creatorsPhotosSection}>
             <div className={styles.simonWrapper}>
               <Image
+                alt="Simon l'un des fondateurs du restaurant"
                 className={styles.creatorPhotos}
                 src={Simon}
                 layout="responsive"
@@ -63,6 +66,7 @@ export default function Brand() {
             </div>
             <div className={styles.pierreWrapper}>
               <Image
+                alt="Pierre l'un des fondateurs du restaurant"
                 className={styles.creatorPhotos}
                 src={Pierre}
                 layout="responsive"
@@ -74,7 +78,12 @@ export default function Brand() {
       <article className={styles.article}>
         <div className={styles.articleWrapper}>
           <section className={styles.articleSection}>
-            <Image className={styles.image} src={NewYork} layout="responsive" />
+            <Image
+              alt="une photo de New York"
+              className={styles.image}
+              src={NewYork}
+              layout="responsive"
+            />
           </section>
           <section className={styles.articleSection}>
             <section className={styles.endArticleContent}>
@@ -125,6 +134,7 @@ export default function Brand() {
           </section>
           <section className={styles.articleSection}>
             <Image
+              alt="une photo de pastrami"
               className={styles.image}
               src={ViandePastrami}
               layout="responsive"

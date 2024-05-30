@@ -10,7 +10,7 @@ import {
 import {
   ErrorMessage,
   SubmitMessage,
-} from "@/components/HandlingErrors/displayErrors";
+} from "@/components/HandlingErrors/ErrorsMessages";
 
 export default function Contact() {
   const [input, setInput] = useState({

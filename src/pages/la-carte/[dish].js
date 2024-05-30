@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import OrderingButton from "@/components/OrderingButton";
+import { getItemByName } from "@/data/data";
 
 export default function MenuDishPage() {
   const router = useRouter();
@@ -24,13 +25,15 @@ export default function MenuDishPage() {
       <section className={styles.dishDescriptionWrapper}>
         <article className={styles.articleWrapper}>
           <div className={styles.imageWrapper}>
-            <Image
-              alt="une photo du produit"
-              src={decodeURIComponent(src)}
-              width={width}
-              height={height}
-              layout="responsive"
-            />
+            {name && (
+              <Image
+                alt="une photo du produit"
+                src={decodeURIComponent(src) ?? getItemByName(name).src}
+                width={width ?? 500}
+                height={height ?? 300}
+                layout="responsive"
+              />
+            )}
           </div>
           <div className={styles.wrapper}>
             <header className={styles.header}>
@@ -39,7 +42,7 @@ export default function MenuDishPage() {
             <p className={styles.itemContent}>{desc}</p>
             <ul className={styles.ingredientList}>
               {ingList?.map((item) => (
-                <li className={styles.ingredientItem}>
+                <li key={crypto.randomUUID()} className={styles.ingredientItem}>
                   <p className={styles.itemContent}>{item}</p>
                 </li>
               ))}

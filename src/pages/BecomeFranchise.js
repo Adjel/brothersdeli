@@ -9,7 +9,7 @@ import { emailRegex, phoneRegex } from "@/utils/regex";
 import {
   ErrorMessage,
   SubmitMessage,
-} from "@/components/HandlingErrors/displayErrors";
+} from "@/components/HandlingErrors/ErrorsMessages";
 
 export default function BecomeFranchise() {
   const [input, setInput] = useState({
