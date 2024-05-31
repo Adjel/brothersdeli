@@ -29,7 +29,7 @@ function ProductsCategorySection({ id, title, content, itemList }) {
                   ingList: item.ingList,
                   more: item.more,
                   linkDesc: item.link?.desc,
-                  linkHref: item.link?.href,
+                  linkId: item.link?.id,
                 },
               }}
             >

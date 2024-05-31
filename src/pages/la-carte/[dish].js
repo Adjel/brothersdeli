@@ -5,12 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import OrderingButton from "@/components/OrderingButton";
-import { getItemByName } from "@/data/data";
+import { fakeFetchOnApi, getItemByName } from "@/data/data";
 
 export default function MenuDishPage() {
   const router = useRouter();
-  const { name, src, width, height, desc, ingList, more, linkDesc, linkHref } =
+  const { name, src, width, height, desc, ingList, more, linkDesc, linkId } =
     router.query;
+
+  function handleOnLinkClick(event, linkId) {
+    event.preventDefault();
+    const data = fakeFetchOnApi(linkId);
+    console.log(data);
+    router.push({
+      pathname: `/la-carte/${data.id}`,
+      query: {
+        name: data.title ?? data.name,
+        src: decodeURIComponent(data.product.src),
+        width: data.width ?? 500,
+        height: data.height ?? 300,
+        desc: data.desc,
+        ingList: data.ingList,
+        more: data.more,
+        linkDesc: data.link.desc,
+        linkId: data.link.id,
+      },
+    });
+  }
 
   return (
     <section className={styles.dishWrapper}>
@@ -28,7 +48,7 @@ export default function MenuDishPage() {
             {name && (
               <Image
                 alt="une photo du produit"
-                src={decodeURIComponent(src) ?? getItemByName(name).src}
+                src={decodeURIComponent(src) ?? src ?? undefined}
                 width={width ?? 500}
                 height={height ?? 300}
                 layout="responsive"
@@ -53,7 +73,11 @@ export default function MenuDishPage() {
                 {linkDesc && (
                   <>
                     {" "}
-                    <Link href={linkHref} style={{ color: "var(--primary)" }}>
+                    <Link
+                      href=""
+                      onClick={(event) => handleOnLinkClick(event, linkId)}
+                      style={{ color: "var(--primary)" }}
+                    >
                       {linkDesc}
                     </Link>
                     .

@@ -52,7 +52,7 @@ export const dishes = [
     more: "Existe également avec 220gr de pastrami pour un maximum de gourmandise,",
     link: {
       desc: "Le Big Brothers",
-      href: `/la-carte/le-big-brothers`,
+      id: `le-big-brothers`,
     },
   },
   {
@@ -74,7 +74,7 @@ export const dishes = [
     more: "Retrouvez son petit frère juste",
     link: {
       desc: "ici",
-      href: `/la-carte/le-brothers`,
+      id: `le-brothers`,
     },
   },
   {
@@ -249,3 +249,54 @@ export const desserts = [
     src: leCheeseCake,
   },
 ];
+
+export function fakeFetchOnApi(id) {
+  if (id === `le-big-brothers`) {
+    return {
+      id: "le-big-brothers",
+      title: "Le BIG Brother's",
+      name: "Le BIG Brother's 225gr",
+      src: leBigBrothers,
+      product: leBigBrothersDetail,
+      desc: [
+        "Le sandwich idéal pour les plus gourmands avec une montagne de pastrami.",
+      ],
+      ingList: [
+        "Du pain de seigle",
+        "220gr de pastrami de bœuf",
+        "Des pickles",
+        "Des oignons confits",
+        "Une sauce moutarde-miel",
+      ],
+      more: "Retrouvez son petit frère juste",
+      link: {
+        desc: "ici",
+        id: `le-brothers`,
+      },
+    };
+  }
+  if (id === `le-brothers`) {
+    return {
+      id: "le-brothers",
+      title: `Le Brother's`,
+      name: `Le Brother's 125gr`,
+      src: leBrother,
+      product: leBrotherDetails,
+      desc: [
+        "Découvrez notre best-seller, un délicieux sandwich avec 125gr de pastrami de bœuf. ",
+      ],
+      ingList: [
+        "Du pain de seigle (Rye bread en anglais)",
+        "Du pastrami de bœuf",
+        "Des pickles",
+        "Des oignons confits",
+        "Une sauce moutarde-miel",
+      ],
+      more: "Existe également avec 220gr de pastrami pour un maximum de gourmandise,",
+      link: {
+        desc: "Le Big Brothers",
+        id: `le-big-brothers`,
+      },
+    };
+  }
+}
