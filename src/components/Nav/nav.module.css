@@ -37,33 +37,6 @@
   width: 100%;
 }
 
-.navLink, .navLinkSelected, .navLinkDesktopSelected {
-  display: flex;
-  text-decoration: none;
-  color: var(--primary);
-  font-family: var(--font-merriweather);
-  text-transform: uppercase;
-  padding: calc(10/16*1rem) calc(20/16*1rem);
-  font-size: var(--nav-font-size);
-  font-weight: var(--font-weight-nine);
-  white-space: nowrap;
-  overflow: hidden;
-
-  &:hover {
-    background-color: var(--primary);
-    color: var(--secondary);
-  }
-}
-
-.navLinkSelected {
-  background-color: var(--primary);
-  color: var(--secondary);
-}
-
-.itemLinkWrapper {
-  width: 100%;
-}
-
 .navLink > * {
     color: inherit;
 }

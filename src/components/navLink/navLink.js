@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../nav/nav.module.css";
+import styles from "./navLink.module.css";
 import { usePathname } from "next/navigation";
 
 function NavLink({ href, label }) {
