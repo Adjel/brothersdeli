@@ -30,7 +30,7 @@ export default function Brand() {
         <span className={styles.marquee}>
           <h2 className={styles.marqueeContent}>
             BROTHERS DELI, LE OG DU PASTRAMI MADE IN FRANCE · RETROUVE TOI A NEW
-            YORK DES 50'S LE TEMPS D'UN SANDWICH.
+            YORK DES 50&apos;S LE TEMPS D'UN SANDWICH.
           </h2>
         </span>
       </section>
@@ -40,16 +40,16 @@ export default function Brand() {
             <h2 className={styles.h2}>le concept</h2>
             <div className={styles.content}>
               <p className={styles.p}>
-                Brothers Deli c’est deux amis, Simon et Pierre, qui se sont
-                réunis autour d’un projet commun : celui de proposer une
+                Brothers Deli c&apos;est deux amis, Simon et Pierre, qui se sont
+                réunis autour d&apos;un projet commun : celui de proposer une
                 street-food qui fusionne les saveurs de la Méditerranée et
-                celles des Deli’ des années 50 à New York avec leur produit
+                celles des Deli&apos; des années 50 à New York avec leur produit
                 phare,<b> le pastrami</b>.
               </p>
               <p className={styles.p}>
                 <b className={styles.b}>
-                  C’est en quelques sortes la cuisine du monde qu’ils ont voulu
-                  regrouper en un seul endroit.
+                  C&apos;est en quelques sortes la cuisine du monde qu&apos;ils
+                  ont voulu regrouper en un seul endroit.
                 </b>
               </p>
               <p>&nbsp;</p>
@@ -87,21 +87,23 @@ export default function Brand() {
           </section>
           <section className={styles.articleSection}>
             <section className={styles.endArticleContent}>
-              <h2 className={styles.articleH2}>le pastrami, c'est quoi ?</h2>
+              <h2 className={styles.articleH2}>
+                le pastrami, c&apos;est quoi ?
+              </h2>
               <p className={styles.articleP}>
-                C’est une viande de bœuf marinée pendant quatre jours puis
-                coupée en fines tranches qui fond en bouche. T’en as l’eau à la
-                bouche, n’est-ce pas ? Nous aussi.
+                C&apos;est une viande de bœuf marinée pendant quatre jours puis
+                coupée en fines tranches qui fond en bouche. T&apos;en as
+                l&apos;eau à la bouche, n’est-ce pas ? Nous aussi.
               </p>
               <p className={styles.articleP}>
-                Popularisée par les Juifs venus d’Europe aux Etats-Unis, c’est
-                avant tout une viande qui a vu le jour dans les Balkans, plus
-                précisément en Roumanie.
+                Popularisée par les Juifs venus d&apos;Europe aux Etats-Unis,
+                c&apos;est avant tout une viande qui a vu le jour dans les
+                Balkans, plus précisément en Roumanie.
               </p>
               <p className={styles.articleP}>
                 <b>
-                  Aujourd’hui, l’un de nos objectifs est de la rendre populaire
-                  dans tout l’Hexagone.
+                  Aujourd&apos;hui, l&apos;un de nos objectifs est de la rendre
+                  populaire dans tout l&apos;Hexagone.
                 </b>
               </p>
             </section>
@@ -114,21 +116,21 @@ export default function Brand() {
             <section className={styles.startArticleContent}>
               <h2 className={styles.articleH2}>fait maison</h2>
               <p className={styles.articleP}>
-                L’une des pierres angulaires de notre cuisine est la confection
-                maison de
+                L&apos;une des pierres angulaires de notre cuisine est la
+                confection maison de
                 <b>notre pastrami de qualité supérieure</b>.
               </p>
               <p className={styles.articleP}>
-                Avec passion et dévouement, notre équipe d’experts culinaires
-                prépare chaque morceau de viande avec soin, en utilisant des
-                méthodes traditionnelles et des épices spécialement
-                sélectionnées pour obtenir des saveurs uniques qui éveilleront
-                vos papilles.
+                Avec passion et dévouement, notre équipe d&apos;experts
+                culinaires prépare chaque morceau de viande avec soin, en
+                utilisant des méthodes traditionnelles et des épices
+                spécialement sélectionnées pour obtenir des saveurs uniques qui
+                éveilleront vos papilles.
               </p>
               <p className={styles.articleP}>
-                Chez nous, « fait maison » signifie bien plus qu’une simple
-                étiquette, c’est le symbole de notre engagement envers
-                l’authenticité, la fraîcheur et la qualité inégalée.
+                Chez nous, « fait maison » signifie bien plus qu&apos;une simple
+                étiquette, c&apos;est le symbole de notre engagement envers
+                l&apos;authenticité, la fraîcheur et la qualité inégalée.
               </p>
             </section>
           </section>
