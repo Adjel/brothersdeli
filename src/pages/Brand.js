@@ -30,7 +30,7 @@ export default function Brand() {
         <span className={styles.marquee}>
           <h2 className={styles.marqueeContent}>
             BROTHERS DELI, LE OG DU PASTRAMI MADE IN FRANCE · RETROUVE TOI A NEW
-            YORK DES 50&apos;S LE TEMPS D'UN SANDWICH.
+            YORK DES 50&apos;S LE TEMPS D&apos;UN SANDWICH.
           </h2>
         </span>
       </section>
