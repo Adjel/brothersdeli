@@ -33,7 +33,7 @@ export default function Menu() {
       />
       <div style={{ backgroundColor: "var(--secondary)", width: "100%" }}>
         <section className={styles.actionWrapper}>
-          <p className={styles.actionP}>Alors t'attends quoi ?</p>
+          <p className={styles.actionP}>Alors t&apos;attends quoi ?</p>
           <OrderingButton />
         </section>
       </div>

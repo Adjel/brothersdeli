@@ -87,7 +87,8 @@ export default function BecomeFranchise() {
         <header className={styles.header}>
           <h1 className={styles.title}>devenir franchisé</h1>
           <p className={styles.subTitle}>
-            Vous souhaitez faire partie de l'aventure ? Faisons connaissance !
+            Vous souhaitez faire partie de l&apos;aventure ? Faisons
+            connaissance !
           </p>
         </header>
         <section className={styles.formWrapper}>
@@ -136,7 +137,8 @@ export default function BecomeFranchise() {
             </div>
             <div className={styles.inputWrapper}>
               <label className={styles.label} htmlFor="city">
-                Ville d'implantation <span className={styles.required}>*</span>
+                Ville d&apos;implantation
+                <span className={styles.required}>*</span>
               </label>
               <input
                 className={styles.input}
